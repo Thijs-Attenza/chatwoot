@@ -1,23 +1,23 @@
 {
   "CHAT_LIST": {
     "LOADING": "Gesprekken ophalen",
-    "LOAD_MORE_CONVERSATIONS": "Meer gesprekken laden",
+    "LOAD_MORE_CONVERSATIONS": "Laad meer gesprekken",
     "EOF": "Alle gesprekken geladen 🎉",
     "LIST": {
       "404": "Er zijn geen actieve gesprekken in deze groep."
     },
-    "FAILED_TO_SEND": "Failed to send",
+    "FAILED_TO_SEND": "Verzenden mislukt",
     "TAB_HEADING": "Gesprekken",
     "MENTION_HEADING": "Vermeldingen",
-    "UNATTENDED_HEADING": "Onbeheer",
+    "UNATTENDED_HEADING": "Onbehandeld",
     "SEARCH": {
       "INPUT": "Zoek naar mensen, gesprekken, opgeslagen antwoorden .."
     },
-    "FILTER_ALL": "Allemaal",
+    "FILTER_ALL": "Alle",
     "ASSIGNEE_TYPE_TABS": {
-      "me": "Mijn",
-      "unassigned": "Niet toegewezen",
-      "all": "Allemaal"
+      "me": "Van mij",
+      "unassigned": "Onbehandeld",
+      "all": "Alle"
     },
     "CHAT_STATUS_FILTER_ITEMS": {
       "open": {
@@ -27,60 +27,60 @@
         "TEXT": "Opgelost"
       },
       "pending": {
-        "TEXT": "Afwachtend"
+        "TEXT": "In afwachting"
       },
       "snoozed": {
-        "TEXT": "Gesluimerd"
+        "TEXT": "Gedempt"
       },
       "all": {
-        "TEXT": "Allemaal"
+        "TEXT": "Alle"
       }
     },
-    "VIEW_FILTER": "Bekijken",
-    "SORT_TOOLTIP_LABEL": "Sorteer gesprekken",
+    "VIEW_FILTER": "Bekijk",
+    "SORT_TOOLTIP_LABEL": "Gesprekken sorteren",
     "CHAT_SORT": {
       "STATUS": "Status",
-      "ORDER_BY": "Sorteren op"
+      "ORDER_BY": "Sorteer op"
     },
     "CHAT_TIME_STAMP": {
       "CREATED": {
-        "LATEST": "Aangemaakt op",
+        "LATEST": "Aangemaakt",
         "OLDEST": "Aangemaakt op:"
       },
       "LAST_ACTIVITY": {
-        "NOT_ACTIVE": "Laatste Activiteit:",
-        "ACTIVE": "Laatste Activiteit"
+        "NOT_ACTIVE": "Laatste activiteit:",
+        "ACTIVE": "Laatste activiteit"
       }
     },
     "SORT_ORDER_ITEMS": {
       "last_activity_at_asc": {
-        "TEXT": "Last activity: Oldest first"
+        "TEXT": "Laatste activiteit: Oudste eerst"
       },
       "last_activity_at_desc": {
-        "TEXT": "Last activity: Newest first"
+        "TEXT": "Laatste activiteit: Nieuwste eerst"
       },
       "created_at_desc": {
-        "TEXT": "Created at: Newest first"
+        "TEXT": "Aangemaakt op: Nieuwste eerst"
       },
       "created_at_asc": {
-        "TEXT": "Created at: Oldest first"
+        "TEXT": "Aangemaakt op: Oudste eerst"
       },
       "priority_desc": {
-        "TEXT": "Priority: Highest first"
+        "TEXT": "Prioriteit: Hoogste eerst"
       },
       "priority_asc": {
-        "TEXT": "Priority: Lowest first"
+        "TEXT": "Prioriteit: Laagste eerst"
       },
       "waiting_since_asc": {
-        "TEXT": "Pending Response: Longest first"
+        "TEXT": "Wacht op reactie: Langste eerst"
       },
       "waiting_since_desc": {
-        "TEXT": "Pending Response: Shortest first"
+        "TEXT": "Wacht op reactie: Kortste eerst"
       }
     },
     "ATTACHMENTS": {
       "image": {
-        "CONTENT": "Bericht met foto"
+        "CONTENT": "Afbeeldingsbericht"
       },
       "audio": {
         "CONTENT": "Audiobericht"
@@ -98,19 +98,19 @@
         "CONTENT": "Instagram Reel"
       },
       "fallback": {
-        "CONTENT": "heeft een url gedeeld"
+        "CONTENT": "heeft een URL gedeeld"
       },
       "contact": {
-        "CONTENT": "Shared contact"
+        "CONTENT": "Gedeeld contact"
       }
     },
     "CHAT_SORT_BY_FILTER": {
       "TITLE": "Gesprek sorteren",
-      "DROPDOWN_TITLE": "Sorteren op",
+      "DROPDOWN_TITLE": "Sorteer op",
       "ITEMS": {
         "LATEST": {
-          "NAME": "Laatste activiteit om",
-          "LABEL": "Laatste Activiteit"
+          "NAME": "Laatste activiteit op",
+          "LABEL": "Laatste activiteit"
         },
         "CREATED_AT": {
           "NAME": "Aangemaakt op",
@@ -123,17 +123,17 @@
       }
     },
     "RECEIVED_VIA_EMAIL": "Ontvangen via e-mail",
-    "VIEW_TWEET_IN_TWITTER": "Bekijk tweet op Twitter",
-    "REPLY_TO_TWEET": "Antwoord op deze tweet",
-    "LINK_TO_STORY": "Ga naar instagram verhaal",
+    "VIEW_TWEET_IN_TWITTER": "Bekijk tweet in Twitter",
+    "REPLY_TO_TWEET": "Beantwoord deze tweet",
+    "LINK_TO_STORY": "Ga naar Instagram-verhaal",
     "SENT": "Succesvol verzonden",
     "READ": "Succesvol gelezen",
     "DELIVERED": "Succesvol afgeleverd",
     "NO_MESSAGES": "Geen berichten",
     "NO_CONTENT": "Geen inhoud beschikbaar",
-    "HIDE_QUOTED_TEXT": "Verberg geciteerde tekst",
-    "SHOW_QUOTED_TEXT": "Toon geciteerde tekst",
-    "MESSAGE_READ": "Lezen",
-    "SENDING": "Sending"
+    "HIDE_QUOTED_TEXT": "Citeertekst verbergen",
+    "SHOW_QUOTED_TEXT": "Citeertekst tonen",
+    "MESSAGE_READ": "Gelezen",
+    "SENDING": "Bezig met verzenden"
   }
 }

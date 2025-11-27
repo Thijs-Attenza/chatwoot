@@ -6,16 +6,16 @@
     "SWITCH_VIEW_LAYOUT": "Wissel de lay-out",
     "DASHBOARD_APP_TAB_MESSAGES": "Berichten",
     "UNVERIFIED_SESSION": "De identiteit van deze gebruiker is niet geverifieerd",
-    "NO_MESSAGE_1": "Oh oh! Het lijkt erop dat er geen berichten van klanten in uw inbox staan.",
+    "NO_MESSAGE_1": "Oeps! Het lijkt erop dat er geen berichten van klanten in uw inbox staan.",
     "NO_MESSAGE_2": " om een bericht naar uw pagina te sturen!",
     "NO_INBOX_1": "Hola! Het lijkt erop dat je nog geen postvakken hebt toegevoegd.",
     "NO_INBOX_2": " om te beginnen",
-    "NO_INBOX_AGENT": "Oh Oh! Het lijkt erop dat u geen deel uitmaakt van een inbox. Neem contact op met uw beheerder",
+    "NO_INBOX_AGENT": "Oeps! Het lijkt erop dat u geen deel uitmaakt van een inbox. Neem contact op met uw beheerder.",
     "SEARCH_MESSAGES": "Zoek naar berichten in gesprekken",
     "VIEW_ORIGINAL": "View original",
     "VIEW_TRANSLATED": "View translated",
     "EMPTY_STATE": {
-      "CMD_BAR": "to open command menu",
+      "CMD_BAR": "actiemenu weergeven",
       "KEYBOARD_SHORTCUTS": "sneltoetsen weergeven"
     },
     "SEARCH": {
@@ -104,9 +104,9 @@
     },
     "RESOLVE_DROPDOWN": {
       "MARK_PENDING": "Markeren als in afwachting van",
-      "SNOOZE_UNTIL": "Snooze",
+      "SNOOZE_UNTIL": "Dempen",
       "SNOOZE": {
-        "TITLE": "Snooze tot",
+        "TITLE": "Dempen tot",
         "NEXT_REPLY": "Volgende antwoord",
         "TOMORROW": "Morgen",
         "NEXT_WEEK": "Volgende week"
@@ -117,8 +117,8 @@
       "TEAMS": "Teams"
     },
     "CUSTOM_SNOOZE": {
-      "TITLE": "Snooze tot",
-      "APPLY": "Snooze",
+      "TITLE": "Dempen tot",
+      "APPLY": "Dempen",
       "CANCEL": "Annuleren"
     },
     "PRIORITY": {
@@ -150,7 +150,7 @@
       "MARK_AS_READ": "Mark as read",
       "REOPEN": "Heropen gesprek",
       "SNOOZE": {
-        "TITLE": "Sluimeren",
+        "TITLE": "Dempen",
         "NEXT_REPLY": "Tot volgende antwoord",
         "TOMORROW": "Tot morgen",
         "NEXT_WEEK": "Tot volgende week"
@@ -273,21 +273,21 @@
       }
     },
     "SIDEBAR": {
-      "CONTACT": "Contact",
+      "CONTACT": "Contactpersoon",
       "COPILOT": "Copilot"
     }
   },
   "EMAIL_TRANSCRIPT": {
     "TITLE": "Verstuur conversatie transcript",
-    "DESC": "Send a copy of the conversation transcript to the specified email address",
+    "DESC": "Stuur een kopie van het gespreksoverzicht naar het opgegeven e-mailadres",
     "SUBMIT": "Bevestigen",
     "CANCEL": "Annuleren",
-    "SEND_EMAIL_SUCCESS": "The chat transcript was sent successfully",
+    "SEND_EMAIL_SUCCESS": "Het gespreksoverzicht is succesvol verzonden",
     "SEND_EMAIL_ERROR": "Er is een fout opgetreden, probeer het opnieuw",
     "FORM": {
-      "SEND_TO_CONTACT": "Send the transcript to the customer",
-      "SEND_TO_AGENT": "Send the transcript to the assigned agent",
-      "SEND_TO_OTHER_EMAIL_ADDRESS": "Send the transcript to another email address",
+      "SEND_TO_CONTACT": "Stuur het overzicht naar de klant",
+      "SEND_TO_AGENT": "Stuur het overzicht naar de toegewezen agent",
+      "SEND_TO_OTHER_EMAIL_ADDRESS": "Stuur het overzicht naar een ander e-mailadres",
       "EMAIL": {
         "PLACEHOLDER": "Voer een e-mailadres in",
         "ERROR": "Voer een geldig e-mailadres in"
@@ -323,7 +323,7 @@
     }
   },
   "CONVERSATION_SIDEBAR": {
-    "ASSIGNEE_LABEL": "Assigned Agent",
+    "ASSIGNEE_LABEL": "Toegewezen agent",
     "SELF_ASSIGN": "Aan mij toewijzen",
     "TEAM_LABEL": "Toegewezen team",
     "SELECT": {
@@ -331,12 +331,12 @@
     },
     "ACCORDION": {
       "CONTACT_DETAILS": "Contactgegevens",
-      "CONVERSATION_ACTIONS": "Conversation Actions",
+      "CONVERSATION_ACTIONS": "Conversatie acties",
       "CONVERSATION_LABELS": "Labels voor gesprekken",
-      "CONVERSATION_INFO": "Conversation Information",
-      "CONTACT_NOTES": "Contact Notes",
-      "CONTACT_ATTRIBUTES": "Contact Attributes",
-      "PREVIOUS_CONVERSATION": "Vorige gesprekken",
+      "CONVERSATION_INFO": "Conversatie informatie",
+      "CONTACT_NOTES": "Conversatie notities",
+      "CONTACT_ATTRIBUTES": "Conversatie attributen",
+      "PREVIOUS_CONVERSATION": "Vorige conversaties",
       "MACROS": "Macro's",
       "LINEAR_ISSUES": "Linked Linear Issues",
       "SHOPIFY_ORDERS": "Shopify Orders"
@@ -392,20 +392,20 @@
     "EXPAND": "Expand email"
   },
   "CONVERSATION_PARTICIPANTS": {
-    "SIDEBAR_MENU_TITLE": "Participating",
-    "SIDEBAR_TITLE": "Conversation participants",
+    "SIDEBAR_MENU_TITLE": "Deelnemers",
+    "SIDEBAR_TITLE": "Conversatie deelnemers",
     "NO_RECORDS_FOUND": "Geen resultaten gevonden",
-    "ADD_PARTICIPANTS": "Select participants",
-    "REMANING_PARTICIPANTS_TEXT": "+{count} others",
-    "REMANING_PARTICIPANT_TEXT": "+{count} other",
-    "TOTAL_PARTICIPANTS_TEXT": "{count} people are participating.",
-    "TOTAL_PARTICIPANT_TEXT": "{count} person is participating.",
-    "NO_PARTICIPANTS_TEXT": "No one is participating!.",
-    "WATCH_CONVERSATION": "Join conversation",
-    "YOU_ARE_WATCHING": "You are participating",
+    "ADD_PARTICIPANTS": "Selecteer deelnemers",
+    "REMANING_PARTICIPANTS_TEXT": "+{count} andere",
+      "REMANING_PARTICIPANT_TEXT": "+{count} andere",
+    "TOTAL_PARTICIPANTS_TEXT": "{count} personen nemen deel.",
+    "TOTAL_PARTICIPANT_TEXT": "{count} persoon neemt deel.",
+    "NO_PARTICIPANTS_TEXT": "Er zijn geen deelnemers!.",
+    "WATCH_CONVERSATION": "Deelnemen aan conversatie",
+    "YOU_ARE_WATCHING": "Je neemt deel aan deze conversatie",
     "API": {
       "ERROR_MESSAGE": "Could not update, try again!",
-      "SUCCESS_MESSAGE": "Participants updated!"
+      "SUCCESS_MESSAGE": "Deelnemers geupdated!"
     }
   },
   "TRANSLATE_MODAL": {

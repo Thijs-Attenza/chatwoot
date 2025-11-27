@@ -28,8 +28,8 @@ nl:
       invalid_email: 'Voer een geldig e-mailadres in'
       authentication_failed: 'Authentication failed. Please check your credentials and try again.'
   messages:
-    reset_password_success: Woot! Verzoek om wachtwoord te resetten is gelukt. Controleer je e-mail voor instructies.
-    reset_password_failure: Oh ho! We konden geen gebruiker vinden met het opgegeven e-mailadres.
+    reset_password_success: Verzoek om wachtwoord te resetten is gelukt. Controleer je e-mail voor instructies.
+    reset_password_failure: Oeps! We konden geen gebruiker vinden met het opgegeven e-mailadres.
     reset_password_saml_user: This account uses SAML authentication. Password reset is not available. Please contact your administrator.
     login_saml_user: This account uses SAML authentication. Please sign in through your organization's SAML provider.
     saml_not_available: SAML authentication is not available in this installation.
@@ -57,29 +57,29 @@ nl:
       import:
         failed: Bestand is leeg
       export:
-        success: We will notify you once contacts export file is ready to view.
+        success: Wij zullen u een melding sturen zodra het contactexportbestand klaar is om te bekijken.
       email:
         invalid: Ongeldig email
       phone_number:
         invalid: moet in e164-formaat zijn
     companies:
       domain:
-        invalid: must be a valid domain name
+        invalid: moet een geldige domeinnaam zijn
     categories:
       locale:
         unique: moet uniek zijn in de categorie en portal
     dyte:
-      invalid_message_type: 'Invalid message type. Action not permitted'
+      invalid_message_type: 'Ongeldige berichttype. Actie niet toegestaan'
     slack:
       invalid_channel_id: 'Invalid slack channel. Please try again'
     whatsapp:
-      token_exchange_failed: 'Failed to exchange code for access token. Please try again.'
-      invalid_token_permissions: 'The access token does not have the required permissions for WhatsApp.'
-      phone_info_fetch_failed: 'Failed to fetch phone number information. Please try again.'
-      phone_number_already_exists: 'Channel already exists for this phone number: %{phone_number}, please contact support if the error persists'
+      token_exchange_failed: 'Fout bij het uitwisselen van de code voor het toegangstoken. Probeer het opnieuw.'
+      invalid_token_permissions: 'Het toegangstoken heeft niet de vereiste machtigingen voor WhatsApp.'
+      phone_info_fetch_failed: 'Het ophalen van telefoonnummerinformatie is mislukt. Probeer het opnieuw.'
+      phone_number_already_exists: 'Er bestaat al een kanaal voor dit telefoonnummer: %{phone_number}. Neem contact op met de ondersteuning als de fout aanhoudt'
       reauthorization:
-        generic: 'Failed to reauthorize WhatsApp. Please try again.'
-        not_supported: 'Reauthorization is not supported for this type of WhatsApp channel.'
+        generic: 'Fout bij het opnieuw autoriseren van WhatsApp. Probeer het opnieuw.'
+        not_supported: 'Herautorisatie wordt niet ondersteund voor dit type WhatsApp-kanaal.'
     inboxes:
       imap:
         socket_error: Controleer de netwerkverbinding, IMAP-adres en probeer het opnieuw.
@@ -90,59 +90,59 @@ nl:
       validations:
         name: mag niet beginnen of eindigen met symbolen, en mag geen < > / \ @ karakters hebben.
     custom_filters:
-      number_of_records: Limit reached. The maximum number of allowed custom filters for a user per account is 1000.
-      invalid_attribute: Invalid attribute key - [%{key}]. The key should be one of [%{allowed_keys}] or a custom attribute defined in the account.
-      invalid_operator: Invalid operator. The allowed operators for %{attribute_name} are [%{allowed_keys}].
-      invalid_query_operator: Query operator must be either "AND" or "OR".
-      invalid_value: Invalid value. The values provided for %{attribute_name} are invalid
+      number_of_records: Limiet bereikt. Het maximale aantal toegestane aangepaste filters per gebruiker per account is 1000.
+      invalid_attribute: Ongeldige attribuutnaam - [%{key}]. De naam moet een van [%{allowed_keys}] zijn of een aangepast attribuut gedefinieerd in het account.
+      invalid_operator: Ongeldige operator. De toegestane operators voor %{attribute_name} zijn [%{allowed_keys}].
+      invalid_query_operator: De query-operator moet 'AND' of 'OR' zijn.
+      invalid_value: Ongeldige waarde. De opgegeven waarden voor %{attribute_name} zijn ongeldig
     custom_attribute_definition:
-      key_conflict: The provided key is not allowed as it might conflict with default attributes.
+      key_conflict: De opgegeven sleutel is niet toegestaan, omdat deze mogelijk in conflict komt met standaardattributen.
     mfa:
-      already_enabled: MFA is already enabled
-      not_enabled: MFA is not enabled
-      invalid_code: Invalid verification code
-      invalid_backup_code: Invalid backup code
-      invalid_token: Invalid or expired MFA token
-      invalid_credentials: Invalid credentials or verification code
-      feature_unavailable: MFA feature is not available. Please configure encryption keys.
+      already_enabled: MFA is al ingeschakeld
+      not_enabled: MFA is niet ingeschakeld
+      invalid_code: Ongeldige verificatiecode
+      invalid_backup_code: Ongeldige back-upcode
+      invalid_token: Ongeldig of verlopen MFA-token
+      invalid_credentials: Ongeldige inloggegevens of verificatiecode
+      feature_unavailable: MFA-functie is niet beschikbaar. Configureer alstublieft de encryptiesleutels.
   profile:
     mfa:
-      enabled: MFA enabled successfully
-      disabled: MFA disabled successfully
+      enabled: MFA succesvol ingeschakeld
+      disabled: MFA succesvol uitgeschakeld
     account_saml_settings:
       invalid_certificate: must be a valid X.509 certificate in PEM format
   reports:
     period: Rapportering van %{since} tot %{until}
-    utc_warning: The report generated is in UTC timezone
+    utc_warning: Het gegenereerde rapport is in de UTC-tijdzone
     agent_csv:
       agent_name: Agent naam
-      conversations_count: Assigned conversations
-      avg_first_response_time: Avg first response time
-      avg_resolution_time: Avg resolution time
-      resolution_count: Aantal Resoluties
-      avg_customer_waiting_time: Avg customer waiting time
+      conversations_count: Toegewezen conversaties
+      avg_first_response_time: Gemiddelde eerste responstijd
+      avg_resolution_time: Gemiddelde oplostijd
+      resolution_count: Aantal oplossingen
+      avg_customer_waiting_time: Gemiddelde wachttijd voor klant
     inbox_csv:
       inbox_name: Naam postvak
       inbox_type: Inbox type
       conversations_count: Aantal conversaties
-      avg_first_response_time: Avg first response time
-      avg_resolution_time: Avg resolution time
+      avg_first_response_time: Gemiddelde eerste responstijd
+      avg_resolution_time: Gemiddelde oplostijd
     label_csv:
       label_title: Label
       conversations_count: Aantal conversaties
-      avg_first_response_time: Avg first response time
-      avg_resolution_time: Avg resolution time
-      avg_reply_time: Avg reply time
-      resolution_count: Aantal Resoluties
+      avg_first_response_time: Gemiddelde eerste responstijd
+      avg_resolution_time: Gemiddelde oplostijd
+      avg_reply_time: Gemiddelde reactietijd
+      resolution_count: Aantal oplossingen
     team_csv:
       team_name: Team Naam
       conversations_count: Aantal gesprekken
-      avg_first_response_time: Avg first response time
-      avg_resolution_time: Avg resolution time
-      resolution_count: Aantal Resoluties
-      avg_customer_waiting_time: Avg customer waiting time
+      avg_first_response_time: Gemiddelde eerste responstijd
+      avg_resolution_time: Gemiddelde oplostijd
+      resolution_count: Aantal oplossingen
+      avg_customer_waiting_time: Gemiddelde wachttijd voor klant
     conversation_traffic_csv:
-      timezone: Timezone
+      timezone: Tijdzone
     sla_csv:
       conversation_id: Conversation ID
       sla_policy_breached: SLA Policy
@@ -165,15 +165,15 @@ nl:
         recorded_at: Datum opgenomen
   notifications:
     notification_title:
-      conversation_creation: 'A conversation (#%{display_id}) has been created in %{inbox_name}'
-      conversation_assignment: 'A conversation (#%{display_id}) has been assigned to you'
-      assigned_conversation_new_message: 'A new message is created in conversation (#%{display_id})'
-      conversation_mention: 'You have been mentioned in conversation (#%{display_id})'
-      sla_missed_first_response: 'SLA target first response missed for conversation (#%{display_id})'
-      sla_missed_next_response: 'SLA target next response missed for conversation (#%{display_id})'
-      sla_missed_resolution: 'SLA target resolution missed for conversation (#%{display_id})'
-    attachment: 'Attachment'
-    no_content: 'No content'
+      conversation_creation: 'Er is een gesprek (#%{display_id}) aangemaakt in %{inbox_name}'
+      conversation_assignment: 'Er is een gesprek (#%{display_id}) aan jou toegewezen'
+      assigned_conversation_new_message: 'Er is een nieuw bericht aangemaakt in gesprek (#%{display_id})'
+      conversation_mention: 'Je bent genoemd in gesprek (#%{display_id})'
+      sla_missed_first_response: 'SLA-doel eerste reactie gemist voor gesprek (#%{display_id})'
+      sla_missed_next_response: 'SLA-doel volgende reactie gemist voor gesprek (#%{display_id})'
+      sla_missed_resolution: 'SLA-doel oplossing gemist voor gesprek (#%{display_id})'
+    attachment: 'Bijlage'
+    no_content: 'Geen inhoud'
   conversations:
     captain:
       handoff: 'Transferring to another agent for further assistance.'
@@ -187,24 +187,24 @@ nl:
         error_code: 'Error code: %{error_code}'
     activity:
       captain:
-        resolved: 'Conversation was marked resolved by %{user_name} due to inactivity'
-        open: 'Conversation was marked open by %{user_name}'
+        resolved: 'Het gesprek werd als opgelost gemarkeerd door %{user_name} vanwege inactiviteit'
+        open: 'Het gesprek werd als open gemarkeerd door %{user_name}.'
       agent_bot:
-        error_moved_to_open: 'Conversation was marked open by system due to an error with the agent bot.'
+        error_moved_to_open: '"Het gesprek werd als open gemarkeerd door het systeem vanwege een fout met de agent-bot.'
       status:
         resolved: 'Gesprek werd gemarkeerd door %{user_name}'
         contact_resolved: 'Gesprek werd opgelost door %{contact_name}'
         open: 'Gesprek werd heropend door %{user_name}'
         pending: 'Gesprek werd gemarkeerd als in afwachting door %{user_name}'
-        snoozed: 'Gesprek werd gesluimerd door %{user_name}'
+        snoozed: 'Gesprek werd gedmept door %{user_name}'
         auto_resolved_days: 'Gesprek werd door systeem gemarkeerd als opgelost na %{count} dagen inactiviteit'
-        auto_resolved_hours: 'Conversation was marked resolved by system due to %{count} hours of inactivity'
-        auto_resolved_minutes: 'Conversation was marked resolved by system due to %{count} minutes of inactivity'
-        system_auto_open: System reopened the conversation due to a new incoming message.
+        auto_resolved_hours: 'Het gesprek werd als opgelost gemarkeerd door het systeem vanwege %{count} uur inactiviteit'
+        auto_resolved_minutes: 'Het gesprek werd als opgelost gemarkeerd door het systeem vanwege %{count} minuten inactiviteit'
+        system_auto_open: Het systeem heeft het gesprek opnieuw geopend vanwege een nieuw binnenkomend bericht.
       priority:
-        added: '%{user_name} set the priority to %{new_priority}'
-        updated: '%{user_name} changed the priority from %{old_priority} to %{new_priority}'
-        removed: '%{user_name} removed the priority'
+        added: '%{user_name} heeft de prioriteit ingesteld op %{new_priority}'
+        updated: '%{user_name} heeft de prioriteit veranderd van %{old_priority} naar %{new_priority}'
+        removed: '%{user_name} heeft de prioriteit verwijderd'
       assignee:
         self_assigned: '%{user_name} heeft dit gesprek aan zichzelf toegewezen'
         assigned: 'Toegewezen aan %{assignee_name} door %{user_name}'
@@ -212,10 +212,10 @@ nl:
       team:
         assigned: 'Toegewezen aan %{team_name} door %{user_name}'
         assigned_with_assignee: 'Toegewezen aan %{assignee_name} via %{team_name} door %{user_name}'
-        removed: 'Unassigned from %{team_name} by %{user_name}'
+        removed: 'Gesprek niet toegewezen aan %{team_name} door %{user_name}'
       labels:
-        added: '%{user_name} added %{labels}'
-        removed: '%{user_name} removed %{labels}'
+        added: '%{user_name} voegde toe %{labels}'
+        removed: '%{user_name} verwijderde %{labels}'
       sla:
         added: '%{user_name} added SLA policy %{sla_name}'
         removed: '%{user_name} removed SLA policy %{sla_name}'
@@ -224,31 +224,31 @@ nl:
         issue_linked: 'Linear issue %{issue_id} was linked by %{user_name}'
         issue_unlinked: 'Linear issue %{issue_id} was unlinked by %{user_name}'
       csat:
-        not_sent_due_to_messaging_window: 'CSAT survey not sent due to outgoing message restrictions'
+        not_sent_due_to_messaging_window: 'CSAT-enquête niet verzonden vanwege beperkingen op uitgaande berichten'
       auto_resolve:
-        not_sent_due_to_messaging_window: 'Auto-resolve message not sent due to outgoing message restrictions'
-      muted: '%{user_name} has muted the conversation'
-      unmuted: '%{user_name} has unmuted the conversation'
-      auto_resolution_message: 'Resolving the conversation as it has been inactive for a while. Please start a new conversation if you need further assistance.'
+        not_sent_due_to_messaging_window: 'Auto-resolve bericht niet verzonden vanwege beperkingen op uitgaande berichten'
+      muted: '%{user_name} heeft het gesprek gedempt'
+      unmuted: '%{user_name} heeft het gesprek van dempen afgehaald'
+      auto_resolution_message: 'Het gesprek wordt opgelost omdat het een tijdlang inactief is geweest. Start een nieuw gesprek als je verdere hulp nodig hebt.'
     templates:
       greeting_message_body: '%{account_name} reageert meestal binnen een paar uur.'
       ways_to_reach_you_message_body: 'Geef het team een manier om je te bereiken.'
       email_input_box_message_body: 'Ontvang een melding via e-mail'
-      csat_input_message_body: 'Please rate the conversation'
+      csat_input_message_body: 'Beoordeel alstublieft het gesprek'
     reply:
       email:
         header:
-          notifications: 'Notifications'
-          from_with_name: '%{assignee_name} from %{inbox_name} <%{from_email}>'
-          reply_with_name: '%{assignee_name} from %{inbox_name} <reply+%{reply_email}>'
-          friendly_name: '%{sender_name} from %{business_name} <%{from_email}>'
+          notifications: 'Meldingen'
+          from_with_name: '%{assignee_name} van %{inbox_name} <%{from_email}>'
+          reply_with_name: '%{assignee_name} van %{inbox_name} <reply+%{reply_email}>'
+          friendly_name: '%{sender_name} van %{business_name} <%{from_email}>'
           professional_name: '%{business_name} <%{from_email}>'
       channel_email:
         header:
-          reply_with_name: '%{assignee_name} from %{inbox_name} <%{from_email}>'
+          reply_with_name: '%{assignee_name} van %{inbox_name} <%{from_email}>'
           reply_with_inbox_name: '%{inbox_name} <%{from_email}>'
-      email_subject: 'New messages on this conversation'
-      transcript_subject: 'Conversation Transcript'
+      email_subject: 'Nieuwe berichten in dit gesprek'
+      transcript_subject: 'Gesprekstranscript'
     survey:
       response: 'Beoordeel het gesprek, %{link}'
   contacts:
@@ -377,23 +377,23 @@ nl:
     button: Open conversation
   time_units:
     days:
-      one: '%{count} day'
-      other: '%{count} days'
+      one: '%{count} dag'
+      other: '%{count} dagen'
     hours:
-      one: '%{count} hour'
-      other: '%{count} hours'
+      one: '%{count} uur'
+      other: '%{count} uur'
     minutes:
-      one: '%{count} minute'
-      other: '%{count} minutes'
+      one: '%{count} minuut'
+      other: '%{count} minuten'
     seconds:
-      one: '%{count} second'
-      other: '%{count} seconds'
+      one: '%{count} seconde'
+      other: '%{count} seconde'
   automation:
-    system_name: 'Automation System'
+    system_name: 'Automatiseringssysteem'
   crm:
-    no_message: 'No messages in conversation'
-    attachment: '[Attachment: %{type}]'
-    no_content: '[No content]'
+    no_message: 'Geen berichten in het gesprek'
+    attachment: '[Bijlage: %{type}]'
+    no_content: '[Geen inhoud]'
     created_activity: |
       New conversation started on %{brand_name}
 

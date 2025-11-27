@@ -622,7 +622,7 @@
         },
         "BUTTONS": {
           "CREATE": "Aanmaken",
-          "EDIT": "Vernieuwen",
+          "EDIT": "Opslaan",
           "CANCEL": "Annuleren"
         }
       }

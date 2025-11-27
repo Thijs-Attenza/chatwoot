@@ -1,77 +1,77 @@
 {
   "INBOX": {
     "LIST": {
-      "TITLE": "My Inbox",
+      "TITLE": "Mijn Inbox",
       "DISPLAY_DROPDOWN": "Display",
-      "LOADING": "Fetching notifications",
-      "404": "There are no active notifications in this group.",
-      "NO_NOTIFICATIONS": "No notifications",
-      "NOTE": "Notifications from all subscribed inboxes",
-      "NO_MESSAGES_AVAILABLE": "Oops! Not able to fetch messages",
-      "SNOOZED_UNTIL": "Snooze tot",
-      "SNOOZED_UNTIL_TOMORROW": "Snoozed tot morgen",
-      "SNOOZED_UNTIL_NEXT_WEEK": "Snoozed tot volgende week"
+      "LOADING": "Meldingen laden",
+      "404": "Er zijn geen nieuwe meldingen in deze groep.",
+      "NO_NOTIFICATIONS": "Geen meldingen",
+      "NOTE": "Meldingen uit alle geabonneerde inboxes",
+      "NO_MESSAGES_AVAILABLE": "Oeps! Ophalen berichten niet gelukt",
+      "SNOOZED_UNTIL": "Dempen tot",
+      "SNOOZED_UNTIL_TOMORROW": "Gedempt tot morgen",
+      "SNOOZED_UNTIL_NEXT_WEEK": "Gedempt tot volgende week"
     },
     "ACTION_HEADER": {
-      "SNOOZE": "Snooze notification",
-      "DELETE": "Delete notification",
+      "SNOOZE": "Melding dempen",
+      "DELETE": "Melding verwijderen",
       "BACK": "Terug"
     },
     "TYPES": {
-      "CONVERSATION_MENTION": "You have been mentioned in a conversation",
-      "CONVERSATION_CREATION": "New conversation created",
-      "CONVERSATION_ASSIGNMENT": "A conversation has been assigned to you",
-      "ASSIGNED_CONVERSATION_NEW_MESSAGE": "New message in an assigned conversation",
-      "PARTICIPATING_CONVERSATION_NEW_MESSAGE": "New message in a conversation you are participating in",
+      "CONVERSATION_MENTION": "Je bent genoemd in een converstatie",
+      "CONVERSATION_CREATION": "Nieuwe conversatie aangemaakt",
+      "CONVERSATION_ASSIGNMENT": "Een conversatie is aan jou toegewezen",
+      "ASSIGNED_CONVERSATION_NEW_MESSAGE": "Nieuw bericht in een toegewezen conversatie",
+      "PARTICIPATING_CONVERSATION_NEW_MESSAGE": "Nieuw bericht in een gevolgde conversatie",
       "SLA_MISSED_FIRST_RESPONSE": "SLA target first response missed for conversation",
       "SLA_MISSED_NEXT_RESPONSE": "SLA target next response missed for conversation",
       "SLA_MISSED_RESOLUTION": "SLA target resolution missed for conversation"
     },
     "TYPES_NEXT": {
-      "CONVERSATION_MENTION": "Mentioned",
-      "CONVERSATION_ASSIGNMENT": "Assigned to you",
-      "CONVERSATION_CREATION": "New Conversation",
+      "CONVERSATION_MENTION": "Vermeld",
+      "CONVERSATION_ASSIGNMENT": "Toegewezen aan jou",
+      "CONVERSATION_CREATION": "Nieuwe conversatie",
       "SLA_MISSED_FIRST_RESPONSE": "SLA breach",
       "SLA_MISSED_NEXT_RESPONSE": "SLA breach",
       "SLA_MISSED_RESOLUTION": "SLA breach",
       "PARTICIPATING_CONVERSATION_NEW_MESSAGE": "Nieuw bericht",
       "ASSIGNED_CONVERSATION_NEW_MESSAGE": "Nieuw bericht",
-      "SNOOZED_UNTIL": "Snoozed for {time}",
-      "SNOOZED_ENDS": "Snooze ended"
+      "SNOOZED_UNTIL": "Gedempt voor {time}",
+      "SNOOZED_ENDS": "Dempen beëindigd"
     },
     "NO_CONTENT": "Geen inhoud beschikbaar",
     "MENU_ITEM": {
-      "MARK_AS_READ": "Mark as read",
+      "MARK_AS_READ": "Markeren als gelezen",
       "MARK_AS_UNREAD": "Markeer als ongelezen",
-      "SNOOZE": "Sluimeren",
+      "SNOOZE": "Dempen",
       "DELETE": "Verwijderen",
       "MARK_ALL_READ": "Markeer alles als gelezen",
-      "DELETE_ALL": "Delete all",
-      "DELETE_ALL_READ": "Delete all read"
+      "DELETE_ALL": "Alles verwijderen",
+      "DELETE_ALL_READ": "Alle gelezen verwijderen"
     },
     "DISPLAY_MENU": {
-      "SORT": "Sort",
-      "DISPLAY": "Display :",
+      "SORT": "Sorteren",
+      "DISPLAY": "Weergeven :",
       "SORT_OPTIONS": {
-        "NEWEST": "Newest",
-        "OLDEST": "Oldest",
+        "NEWEST": "Nieuwste",
+        "OLDEST": "Oudste",
         "PRIORITY": "Prioriteit"
       },
       "DISPLAY_OPTIONS": {
-        "SNOOZED": "Gesluimerd",
+        "SNOOZED": "Gedempt",
         "READ": "Lezen",
         "LABELS": "Labelen",
-        "CONVERSATION_ID": "Conversation ID"
+        "CONVERSATION_ID": "Conversatie ID"
       }
     },
     "ALERTS": {
-      "MARK_AS_READ": "Notification marked as read",
-      "MARK_AS_UNREAD": "Notification marked as unread",
-      "SNOOZE": "Notification snoozed",
-      "DELETE": "Notification deleted",
-      "MARK_ALL_READ": "All notifications marked as read",
-      "DELETE_ALL": "All notifications deleted",
-      "DELETE_ALL_READ": "All read notifications deleted"
+      "MARK_AS_READ": "Melding gemarkeerd als gelezen",
+      "MARK_AS_UNREAD": "Melding gemarkeerd als ongelezen",
+      "SNOOZE": "Melding gedempt",
+      "DELETE": "Melding verwijderd",
+      "MARK_ALL_READ": "Alle meldingen gemarkeerd als gelezen",
+      "DELETE_ALL": "Alle meldingen verwijderd",
+      "DELETE_ALL_READ": "Alle gelezen meldingen verwijderd"
     },
     "REAUTHORIZE": {
       "TITLE": "Reauthorization Required",
