@@ -42,6 +42,10 @@ const isACustomBrandedInstance = useMapGetter(
   'globalConfig/isACustomBrandedInstance'
 );
 
+const chatwootVersionNumber = computed(() => {
+  return window.chatwootConfig?.chatwootVersion;
+});
+
 const toggleShortcutModalFn = show => {
   if (show) {
     emit('openKeyShortcutModal');
@@ -647,6 +651,9 @@ const menuItems = computed(() => {
         />
       </ul>
     </nav>
+    <span class="version-number">
+      {{ t('SIDEBAR.VERSION') }}: {{ chatwootVersionNumber }}
+    </span>
     <section
       class="flex flex-col flex-shrink-0 relative gap-1 justify-between items-center"
     >
@@ -667,3 +674,13 @@ const menuItems = computed(() => {
     </section>
   </aside>
 </template>
+
+<style>
+.version-number {
+  z-index: 1;
+  font-size: 10px;
+  color: #b0b4bb;
+  padding-left: 5px;
+  font-style: italic;
+}
+</style>
