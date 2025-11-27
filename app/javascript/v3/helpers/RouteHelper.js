@@ -65,3 +65,13 @@ export const isOnOnboardingView = route => {
 
   return name.includes('onboarding_');
 };
+
+export const isMFAView = route => {
+  const { name = '' } = route || {};
+
+  if (!name) {
+    return false;
+  }
+
+  return name.endsWith('_mfa');
+};
