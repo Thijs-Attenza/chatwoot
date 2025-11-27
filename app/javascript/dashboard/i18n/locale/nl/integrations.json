@@ -116,7 +116,7 @@
       },
       "SELECT_CHANNEL": {
         "OPTION_LABEL": "Selecteer een kanaal",
-        "UPDATE": "Vernieuwen",
+        "UPDATE": "Opslaan",
         "BUTTON_TEXT": "Kanaal koppelen",
         "DESCRIPTION": "Your Slack workspace is now linked with Chatwoot. However, the integration is currently inactive. To activate the integration and connect a channel to Chatwoot, please click the button below.\n\n**Note:** If you are attempting to connect a private channel, add the Chatwoot app to the Slack channel before proceeding with this step.",
         "ATTENTION_REQUIRED": "Aandacht vereist",
@@ -228,7 +228,7 @@
       },
       "UPDATE": {
         "HEADER": "Edit dashboard app",
-        "FORM_SUBMIT": "Vernieuwen",
+        "FORM_SUBMIT": "Opslaan",
         "FORM_CANCEL": "Annuleren",
         "API_SUCCESS": "Dashboard app updated successfully",
         "API_ERROR": "We couldn't update the app. Please try again later"
@@ -416,7 +416,7 @@
     "FORM": {
       "CANCEL": "Annuleren",
       "CREATE": "Aanmaken",
-      "EDIT": "Vernieuwen"
+      "EDIT": "Opslaan"
     },
     "ASSISTANTS": {
       "HEADER": "Assistants",
@@ -436,7 +436,7 @@
         "ERROR_MESSAGE": "There was an error creating the assistant, please try again."
       },
       "FORM": {
-        "UPDATE": "Vernieuwen",
+        "UPDATE": "Opslaan",
         "SECTIONS": {
           "BASIC_INFO": "Basic Information",
           "SYSTEM_MESSAGES": "System Messages",
@@ -561,7 +561,7 @@
           }
         },
         "LIST": {
-          "SEARCH_PLACEHOLDER": "Search..."
+          "SEARCH_PLACEHOLDER": "Zoeken..."
         },
         "EMPTY_MESSAGE": "No guardrails found. Create or add examples to begin.",
         "SEARCH_EMPTY_MESSAGE": "No guardrails found for this search.",
@@ -606,7 +606,7 @@
           }
         },
         "LIST": {
-          "SEARCH_PLACEHOLDER": "Search..."
+          "SEARCH_PLACEHOLDER": "Zoeken..."
         },
         "EMPTY_MESSAGE": "No response guidelines found. Create or add examples to begin.",
         "SEARCH_EMPTY_MESSAGE": "No response guidelines found for this search.",
@@ -670,7 +670,7 @@
           "UPDATE": "Update changes"
         },
         "LIST": {
-          "SEARCH_PLACEHOLDER": "Search..."
+          "SEARCH_PLACEHOLDER": "Zoeken..."
         },
         "EMPTY_MESSAGE": "No scenarios found. Create or add examples to begin.",
         "SEARCH_EMPTY_MESSAGE": "No scenarios found for this search.",

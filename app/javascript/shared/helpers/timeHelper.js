@@ -6,6 +6,8 @@ import {
   differenceInDays,
 } from 'date-fns';
 
+import { nl } from 'date-fns/locale';
+
 /**
  * Formats a Unix timestamp into a human-readable time format.
  * @param {number} time - Unix timestamp.
@@ -14,7 +16,7 @@ import {
  */
 export const messageStamp = (time, dateFormat = 'h:mm a') => {
   const unixTime = fromUnixTime(time);
-  return format(unixTime, dateFormat);
+  return format(unixTime, dateFormat, { locale: nl });
 };
 
 /**
@@ -26,9 +28,9 @@ export const messageStamp = (time, dateFormat = 'h:mm a') => {
 export const messageTimestamp = (time, dateFormat = 'MMM d, yyyy') => {
   const messageTime = fromUnixTime(time);
   const now = new Date();
-  const messageDate = format(messageTime, dateFormat);
+  const messageDate = format(messageTime, dateFormat, { locale: nl });
   if (!isSameYear(messageTime, now)) {
-    return format(messageTime, 'LLL d y, h:mm a');
+    return format(messageTime, 'LLL d y, h:mm a', { locale: nl });
   }
   return messageDate;
 };
@@ -40,7 +42,7 @@ export const messageTimestamp = (time, dateFormat = 'MMM d, yyyy') => {
  */
 export const dynamicTime = time => {
   const unixTime = fromUnixTime(time);
-  return formatDistanceToNow(unixTime, { addSuffix: true });
+  return formatDistanceToNow(unixTime, { addSuffix: true, locale: nl });
 };
 
 /**
@@ -51,7 +53,7 @@ export const dynamicTime = time => {
  */
 export const dateFormat = (time, df = 'MMM d, yyyy') => {
   const unixTime = fromUnixTime(time);
-  return format(unixTime, df);
+  return format(unixTime, df, { locale: nl });
 };
 
 /**
@@ -65,31 +67,29 @@ export const shortTimestamp = (time, withAgo = false) => {
   // with the following format: 1m, 1h, 1d, 1mo, 1y
   // The function also takes an optional boolean parameter withAgo
   // which will add the word "ago" to the end of the time string
-  const suffix = withAgo ? ' ago' : '';
+  const suffix = withAgo ? ' geleden' : '';
   const timeMappings = {
-    'less than a minute ago': 'now',
-    'a minute ago': `1m${suffix}`,
-    'an hour ago': `1h${suffix}`,
-    'a day ago': `1d${suffix}`,
-    'a month ago': `1mo${suffix}`,
-    'a year ago': `1y${suffix}`,
+    'minder dan een minuut geleden': 'nu',
+    'een minuut geleden': `1 min.${suffix}`,
+    'een uur geleden': `1h${suffix}`,
+    'een dag geleden': `1d${suffix}`,
+    'een maand geleden': `1m${suffix}`,
+    'een jaar geleden': `1y${suffix}`,
   };
   // Check if the time string is one of the specific cases
   if (timeMappings[time]) {
     return timeMappings[time];
   }
   const convertToShortTime = time
-    .replace(/about|over|almost|/g, '')
-    .replace(' minute ago', `m${suffix}`)
-    .replace(' minutes ago', `m${suffix}`)
-    .replace(' hour ago', `h${suffix}`)
-    .replace(' hours ago', `h${suffix}`)
-    .replace(' day ago', `d${suffix}`)
-    .replace(' days ago', `d${suffix}`)
-    .replace(' month ago', `mo${suffix}`)
-    .replace(' months ago', `mo${suffix}`)
-    .replace(' year ago', `y${suffix}`)
-    .replace(' years ago', `y${suffix}`);
+    .replace(/ongeveer|over|bijna|/g, '')
+    .replace(' minuut geleden', ` min.${suffix}`)
+    .replace(' minuten geleden', ` min.${suffix}`)
+    .replace(' uur geleden', `h${suffix}`)
+    .replace(' dag geleden', `d${suffix}`)
+    .replace(' dagen geleden', `d${suffix}`)
+    .replace(' maand geleden', `m${suffix}`)
+    .replace(' maanden geleden', `m${suffix}`)
+    .replace(' jaar geleden', `y${suffix}`);
   return convertToShortTime;
 };
 

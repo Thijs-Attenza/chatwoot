@@ -44,10 +44,10 @@
     },
     "MERGE_CONTACT": "Contact samenvoegen",
     "CONTACT_ACTIONS": "Contact acties",
-    "MUTE_CONTACT": "Block Contact",
-    "UNMUTE_CONTACT": "Unblock Contact",
-    "MUTED_SUCCESS": "This contact is blocked successfully. You will not be notified of any future conversations.",
-    "UNMUTED_SUCCESS": "This contact is unblocked successfully.",
+    "MUTE_CONTACT": "Contactpersoon blokkeren",
+    "UNMUTE_CONTACT": "Contactpersoon deblokkeren",
+    "MUTED_SUCCESS": "Dit contact is succesvol geblokkeerd. Je ontvangt geen meldingen meer van toekomstige gesprekken.",
+    "UNMUTED_SUCCESS": "Dit contact is succesvol gedeblokkeerd.",
     "SEND_TRANSCRIPT": "Transcript verzenden",
     "EDIT_LABEL": "Bewerken",
     "SIDEBAR_SECTIONS": {
@@ -291,11 +291,11 @@
       "TITLE": "Contacten",
       "SEARCH_TITLE": "Search contacts",
       "ACTIVE_TITLE": "Active contacts",
-      "SEARCH_PLACEHOLDER": "Search...",
+      "SEARCH_PLACEHOLDER": "Zoeken...",
       "MESSAGE_BUTTON": "Bericht",
       "SEND_MESSAGE": "Verstuur bericht",
-      "BLOCK_CONTACT": "Block contact",
-      "UNBLOCK_CONTACT": "Unblock contact",
+      "BLOCK_CONTACT": "Blokkeer contactpersoon",
+      "UNBLOCK_CONTACT": "Deblokkeer contactpersoon",
       "BREADCRUMB": {
         "CONTACTS": "Contacten"
       },
@@ -471,7 +471,7 @@
     },
     "DETAILS": {
       "CREATED_AT": "Created {date}",
-      "LAST_ACTIVITY": "Last active {date}",
+      "LAST_ACTIVITY": "Laatst actief {date}",
       "DELETE_CONTACT_DESCRIPTION": "Permanently delete this contact. This action is irreversible",
       "DELETE_CONTACT": "Contactpersoon verwijderen",
       "DELETE_DIALOG": {
@@ -496,10 +496,10 @@
     },
     "SIDEBAR": {
       "TABS": {
-        "ATTRIBUTES": "Attributes",
-        "HISTORY": "History",
+        "ATTRIBUTES": "Attributen",
+        "HISTORY": "Geschiedenis",
         "NOTES": "Notities",
-        "MERGE": "Merge"
+        "MERGE": "Samenvoegen"
       },
       "HISTORY": {
         "EMPTY_STATE": "Er zijn geen eerdere gesprekken gekoppeld aan dit contact"
@@ -507,19 +507,19 @@
       "ATTRIBUTES": {
         "SEARCH_PLACEHOLDER": "Search for attributes",
         "UNUSED_ATTRIBUTES": "{count} Used attribute | {count} Unused attributes",
-        "EMPTY_STATE": "There are no contact custom attributes available in this account. You can create a custom attribute in settings.",
+        "EMPTY_STATE": "Er zijn geen aangepaste contactattributen beschikbaar in dit account. Je kunt een aangepast attribuut maken in de instellingen.",
         "YES": "Ja",
         "NO": "Nee",
         "TRIGGER": {
           "SELECT": "Selecteer waarde",
-          "INPUT": "Enter value"
+          "INPUT": "Voer waarde in"
         },
         "VALIDATIONS": {
-          "INVALID_NUMBER": "Invalid number",
+          "INVALID_NUMBER": "Ongeldig getal",
           "REQUIRED": "Geldige waarde is vereist",
-          "INVALID_INPUT": "Invalid input",
+          "INVALID_INPUT": "Ongeldige waarde",
           "INVALID_URL": "Ongeldige URL",
-          "INVALID_DATE": "Invalid date"
+          "INVALID_DATE": "Ongeldige datum"
         },
         "NO_ATTRIBUTES": "Geen attributen gevonden",
         "API": {
@@ -531,16 +531,16 @@
       },
       "MERGE": {
         "TITLE": "Contact samenvoegen",
-        "DESCRIPTION": "Combine two profiles into one, including all attributes and conversations. In case of conflict, the primary contact’s attributes will take precedence.",
+        "DESCRIPTION": "Combineer twee profielen tot één, inclusief alle attributen en gesprekken. In geval van een conflict, zullen de attributen van het primaire contact voorrang krijgen",
         "PRIMARY": "Primair contact",
-        "PRIMARY_HELP_LABEL": "To be saved",
-        "PRIMARY_REQUIRED_ERROR": "Please select a contact to merge with before proceeding",
-        "PARENT": "To be merged",
+        "PRIMARY_HELP_LABEL": "Nog op te slaan",
+        "PRIMARY_REQUIRED_ERROR": "Selecteer een contact om mee samen te voegen voordat je verdergaat",
+        "PARENT": "Nog samen te voegen",
         "PARENT_HELP_LABEL": "Nog te verwijderen",
-        "EMPTY_STATE": "No contacts found",
-        "PLACEHOLDER": "Search for primary contact",
+        "EMPTY_STATE": "Geen contacten gevonden",
+        "PLACEHOLDER": "Zoeken naar primaire contacten",
         "SEARCH_PLACEHOLDER": "Zoeken naar contacten",
-        "SEARCH_ERROR_MESSAGE": "Could not search for contacts. Please try again later.",
+        "SEARCH_ERROR_MESSAGE": "Kan geen contacten zoeken. Probeer het later opnieuw.",
         "SUCCESS_MESSAGE": "Contact succesvol samengevoegd",
         "ERROR_MESSAGE": "Contacten zijn niet samengevoegd, probeer het opnieuw!",
         "IS_SEARCHING": "Zoeken...",
@@ -553,13 +553,13 @@
         "PLACEHOLDER": "Notitie toevoegen",
         "WROTE": "schreef",
         "YOU": "Jij",
-        "SAVE": "Save note",
-        "ADD_NOTE": "Add contact note",
+        "SAVE": "Notitie opslaan",
+        "ADD_NOTE": "Contact notitie toevoegen",
         "EXPAND": "Uitklappen",
-        "COLLAPSE": "Collapse",
-        "NO_NOTES": "No notes, you can add notes from the contact details page.",
-        "EMPTY_STATE": "There are no notes associated to this contact. You can add a note by typing in the box above.",
-        "CONVERSATION_EMPTY_STATE": "There are no notes yet. Use the Add note button to create one."
+        "COLLAPSE": "Inklappen",
+        "NO_NOTES": "Geen notities, je kunt notities toevoegen vanaf de contactdetailpagina.",
+        "EMPTY_STATE": "Er zijn geen notities gekoppeld aan dit contact. Je kunt een notitie toevoegen door in het vak hierboven te typen.",
+        "CONVERSATION_EMPTY_STATE": "Er zijn nog geen notities. Gebruik de knop 'Notitie toevoegen' om er een te maken."
       }
     },
     "EMPTY_STATE": {
@@ -608,7 +608,7 @@
       },
       "INBOX_SELECTOR": {
         "LABEL": "Via:",
-        "BUTTON": "Show inboxes"
+        "BUTTON": "Inboxen bekijken"
       },
       "EMAIL_OPTIONS": {
         "SUBJECT_LABEL": "Onderwerp :",
@@ -643,8 +643,8 @@
         }
       },
       "ACTION_BUTTONS": {
-        "DISCARD": "Discard",
-        "SEND": "Send ({keyCode})"
+        "DISCARD": "Annuleren",
+        "SEND": "Versturen ({keyCode})"
       }
     }
   }

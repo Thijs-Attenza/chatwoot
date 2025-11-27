@@ -10,7 +10,7 @@
     "PASSWORD_UPDATE_SUCCESS": "Uw wachtwoord is succesvol gewijzigd",
     "AFTER_EMAIL_CHANGED": "Uw profiel is succesvol bijgewerkt. Log opnieuw in als uw inloggegevens zijn gewijzigd",
     "FORM": {
-      "PICTURE": "Profile Picture",
+      "PICTURE": "Profiel afbeelding",
       "AVATAR": "Profiel afbeelding",
       "ERROR": "Corrigeer formulierfouten",
       "REMOVE_IMAGE": "Verwijderen",
@@ -37,42 +37,42 @@
       },
       "INTERFACE_SECTION": {
         "TITLE": "Interface",
-        "NOTE": "Customize the look and feel of your Chatwoot dashboard.",
+        "NOTE": "Pas het uiterlijk en de werking van je Chatwoot-dashboard aan.",
         "FONT_SIZE": {
-          "TITLE": "Font size",
-          "NOTE": "Adjust the text size across the dashboard based on your preference.",
-          "UPDATE_SUCCESS": "Your font settings have been updated successfully",
-          "UPDATE_ERROR": "There is an error while updating the font settings, please try again",
+          "TITLE": "Lettergrootte",
+          "NOTE": "Pas de tekstgrootte in het hele dashboard aan op basis van je voorkeur.",
+          "UPDATE_SUCCESS": "Je lettertype-instellingen zijn succesvol bijgewerkt",
+          "UPDATE_ERROR": "Er is een fout opgetreden bij het bijwerken van de lettertype-instellingen, probeer het opnieuw",
           "OPTIONS": {
-            "SMALLER": "Smaller",
-            "SMALL": "Small",
-            "DEFAULT": "Default",
-            "LARGE": "Large",
-            "LARGER": "Larger",
-            "EXTRA_LARGE": "Extra Large"
+            "SMALLER": "Kleiner",
+            "SMALL": "Klein",
+            "DEFAULT": "Normaal",
+            "LARGE": "Groot",
+            "LARGER": "Groter",
+            "EXTRA_LARGE": "Extra groot"
           }
         },
         "LANGUAGE": {
-          "TITLE": "Preferred Language",
-          "NOTE": "Choose the language you want to use.",
-          "UPDATE_SUCCESS": "Your Language settings have been updated successfully",
-          "UPDATE_ERROR": "There is an error while updating the language settings, please try again",
-          "USE_ACCOUNT_DEFAULT": "Use account default"
+          "TITLE": "Voorkeurstaal",
+          "NOTE": "Kies de taal die je wilt gebruiken.",
+          "UPDATE_SUCCESS": "Je taalinstellingen zijn succesvol bijgewerkt",
+          "UPDATE_ERROR": "Er is een fout opgetreden bij het bijwerken van de taalinstellingen, probeer het opnieuw",
+          "USE_ACCOUNT_DEFAULT": "Standaardinstellingen van account gebruiken"
         }
       },
       "MESSAGE_SIGNATURE_SECTION": {
         "TITLE": "Handtekening persoonlijke berichten",
-        "NOTE": "Create a unique message signature to appear at the end of every message you send from any inbox. You can also include an inline image, which is supported in live-chat, email, and API inboxes.",
-        "BTN_TEXT": "Ondertekening van bericht opslaan",
-        "API_ERROR": "Kon ondertekening niet opslaan! Probeer het opnieuw",
-        "API_SUCCESS": "Ondertekening succesvol opgeslagen",
+        "NOTE": "Maak een unieke berichthandtekening die verschijnt aan het einde van elk bericht dat je vanuit een willekeurige inbox verstuurt. Je kunt ook een inline afbeelding toevoegen; dit wordt ondersteund in livechat-, e-mail- en API-inboxen.",
+        "BTN_TEXT": "Handtekening opslaan",
+        "API_ERROR": "Kon handtekening niet opslaan! Probeer het opnieuw",
+        "API_SUCCESS": "Handtekening succesvol opgeslagen",
         "IMAGE_UPLOAD_ERROR": "Kon afbeelding niet uploaden! Probeer het opnieuw",
         "IMAGE_UPLOAD_SUCCESS": "Afbeelding succesvol toegevoegd. Klik op opslaan om de handtekening op te slaan",
         "IMAGE_UPLOAD_SIZE_ERROR": "De grootte van de afbeelding moet kleiner zijn dan {size}MB"
       },
       "MESSAGE_SIGNATURE": {
-        "LABEL": "Bericht Ondertekening",
-        "ERROR": "Bericht ondertekening kan niet leeg zijn",
+        "LABEL": "Bericht handtekening",
+        "ERROR": "Bericht handtekening kan niet leeg zijn",
         "PLACEHOLDER": "Voer hier uw persoonlijke bericht handtekening in."
       },
       "PASSWORD_SECTION": {
@@ -82,8 +82,8 @@
       },
       "SECURITY_SECTION": {
         "TITLE": "Security",
-        "NOTE": "Manage additional security features for your account.",
-        "MFA_BUTTON": "Manage Two-Factor Authentication"
+        "NOTE": "Beheer aanvullende beveiligingsfuncties voor je account.",
+        "MFA_BUTTON": "Beheer tweestapsverificatie"
       },
       "ACCESS_TOKEN": {
         "TITLE": "Toegangs-token",
@@ -96,29 +96,29 @@
         "RESET_ERROR": "Unable to regenerate access token. Please try again"
       },
       "AUDIO_NOTIFICATIONS_SECTION": {
-        "TITLE": "Audio Alerts",
-        "NOTE": "Enable audio alerts in dashboard for new messages and conversations.",
-        "PLAY": "Play sound",
+        "TITLE": "Geluidsmeldingen",
+        "NOTE": "Audio-meldingen in het dashboard inschakelen voor nieuwe berichten en gesprekken.",
+        "PLAY": "Geluid afspelen",
         "ALERT_TYPES": {
           "NONE": "Geen",
-          "MINE": "Assigned",
+          "MINE": "Toegewezen",
           "ALL": "Allemaal",
-          "ASSIGNED": "My assigned conversations",
-          "UNASSIGNED": "Unassigned conversations",
-          "NOTME": "Open conversations assigned to others"
+          "ASSIGNED": "Mijn toegewezen gesprekken",
+          "UNASSIGNED": "Niet toegewezen gesprekken",
+          "NOTME": "Open gesprekken die aan anderen zijn toegewezen"
         },
         "ALERT_COMBINATIONS": {
-          "NONE": "You haven't selected any options, you won't receive any audio alerts.",
-          "ASSIGNED": "You'll receive alerts for conversations assigned to you.",
-          "UNASSIGNED": "You'll receive alerts for any unassigned conversations.",
-          "NOTME": "You'll receive alerts for conversations assigned to others.",
-          "ASSIGNED+UNASSIGNED": "You'll receive alerts for your assigned conversations and any unattended ones.",
-          "ASSIGNED+NOTME": "You'll receive alerts for conversations assigned to you and to others, but not for unassigned ones.",
-          "NOTME+UNASSIGNED": "You'll receive alerts for unattended conversations and those assigned to others.",
-          "ASSIGNED+NOTME+UNASSIGNED": "You'll receive alerts for all conversations."
+          "NONE": "Je hebt geen opties geselecteerd; je ontvangt geen audiomeldingen.",
+          "ASSIGNED": "Je ontvangt meldingen voor gesprekken die aan jou zijn toegewezen.",
+          "UNASSIGNED": "Je ontvangt meldingen voor alle niet-toegewezen gesprekken.",
+          "NOTME": "Je ontvangt meldingen voor gesprekken die aan anderen zijn toegewezen.",
+          "ASSIGNED+UNASSIGNED": "Je ontvangt meldingen voor je toegewezen gesprekken en alle onbeheerde gesprekken.",
+          "ASSIGNED+NOTME": "Je ontvangt meldingen voor gesprekken die aan jou en aan anderen zijn toegewezen, maar niet voor niet-toegewezen gesprekken.",
+          "NOTME+UNASSIGNED": "Je ontvangt meldingen voor onbeheerde gesprekken en gesprekken die aan anderen zijn toegewezen.",
+          "ASSIGNED+NOTME+UNASSIGNED": "Je ontvangt meldingen voor alle gesprekken."
         },
         "ALERT_TYPE": {
-          "TITLE": "Alert events for conversations",
+          "TITLE": "Waarschuwingsmeldingen voor gesprekken",
           "NONE": "Geen",
           "ASSIGNED": "Toegewezen gesprekken",
           "ALL_CONVERSATIONS": "Alle gesprekken"
@@ -147,21 +147,21 @@
         "SLA_MISSED_RESOLUTION": "Send email notifications when a conversation misses resolution SLA"
       },
       "NOTIFICATIONS": {
-        "TITLE": "Notification preferences",
-        "TYPE_TITLE": "Notification type",
-        "EMAIL": "E-mailadres",
-        "PUSH": "Push-melding",
+        "TITLE": "Meldingsvoorkeuren",
+        "TYPE_TITLE": "Meldingstype",
+        "EMAIL": "E-mail",
+        "PUSH": "Pushmelding",
         "TYPES": {
-          "CONVERSATION_CREATED": "A new conversation is created",
-          "CONVERSATION_ASSIGNED": "A conversation is assigned to you",
-          "CONVERSATION_MENTION": "You are mentioned in a conversation",
-          "ASSIGNED_CONVERSATION_NEW_MESSAGE": "A new message is created in an assigned conversation",
-          "PARTICIPATING_CONVERSATION_NEW_MESSAGE": "A new message is created in a participating conversation",
-          "SLA_MISSED_FIRST_RESPONSE": "A conversation misses first response SLA",
-          "SLA_MISSED_NEXT_RESPONSE": "A conversation misses next response SLA",
-          "SLA_MISSED_RESOLUTION": "A conversation misses resolution SLA"
+          "CONVERSATION_CREATED": "Er is een nieuw gesprek aangemaakt",
+          "CONVERSATION_ASSIGNED": "Er is een gesprek aan jou toegewezen",
+          "CONVERSATION_MENTION": "Je wordt genoemd in een gesprek",
+          "ASSIGNED_CONVERSATION_NEW_MESSAGE": "Er is een nieuw bericht geplaatst in een aan jou toegewezen gesprek",
+          "PARTICIPATING_CONVERSATION_NEW_MESSAGE": "Er is een nieuw bericht geplaatst in een gesprek waaraan je deelneemt",
+          "SLA_MISSED_FIRST_RESPONSE": "Een gesprek heeft de eerste reactietijd-SLA overschreden",
+          "SLA_MISSED_NEXT_RESPONSE": "Een gesprek heeft de volgende reactietijd-SLA overschreden",
+          "SLA_MISSED_RESOLUTION": "Een gesprek heeft de oplostijd-SLA overschreden"
         },
-        "BROWSER_PERMISSION": "Enable push notifications for your browser so you’re able to receive them"
+        "BROWSER_PERMISSION": "Schakel pushmeldingen in voor je browser zodat je ze kunt ontvangen"
       },
       "API": {
         "UPDATE_SUCCESS": "Uw notificatie-instellingen zijn succesvol bijgewerkt",
@@ -185,24 +185,24 @@
         "LABEL": "Profiel afbeelding"
       },
       "NAME": {
-        "LABEL": "Your full name",
-        "ERROR": "Please enter a valid full name",
-        "PLACEHOLDER": "Please enter your full name"
+        "LABEL": "Volledige naam",
+        "ERROR": "Voor een geldige volledige naam in",
+        "PLACEHOLDER": "Voer je volledige naam in"
       },
       "DISPLAY_NAME": {
-        "LABEL": "Display name",
-        "ERROR": "Please enter a valid display name",
-        "PLACEHOLDER": "Please enter a display name, this would be displayed in conversations"
+        "LABEL": "Weergavenaam",
+        "ERROR": "Voer een geldige weergavenaam in",
+        "PLACEHOLDER": "Voer een weergavenaam in; deze wordt weergegeven in gesprekken"
       },
       "AVAILABILITY": {
-        "LABEL": "Availability",
+        "LABEL": "Beschikbaarheid",
         "STATUS": {
           "ONLINE": "Online",
-          "BUSY": "Bezig",
+          "BUSY": "Bezet",
           "OFFLINE": "Offline"
         },
-        "SET_AVAILABILITY_SUCCESS": "Availability has been set successfully",
-        "SET_AVAILABILITY_ERROR": "Couldn't set availability, please try again",
+        "SET_AVAILABILITY_SUCCESS": "Beschikbaarheid is succesvol ingesteld",
+        "SET_AVAILABILITY_ERROR": "Kan de beschikbaarheid niet instellen, probeer het opnieuw.",
         "IMPERSONATING_ERROR": "Cannot change availability while impersonating a user"
       },
       "EMAIL": {
@@ -211,19 +211,19 @@
         "PLACEHOLDER": "Voer je e-mailadres in, dit zou worden weergegeven in gesprekken"
       },
       "CURRENT_PASSWORD": {
-        "LABEL": "Current password",
-        "ERROR": "Please enter the current password",
+        "LABEL": "Huidige wachtwoord",
+        "ERROR": "Voer uw huidige wachtwoord in",
         "PLACEHOLDER": "Voer uw huidige wachtwoord in"
       },
       "PASSWORD": {
-        "LABEL": "New password",
-        "ERROR": "Voer een wachtwoord in van 6 of meer",
+        "LABEL": "Nieuw wachtwoord",
+        "ERROR": "Voer een wachtwoord in van 6 of meer tekens",
         "PLACEHOLDER": "Voer een nieuw wachtwoord in"
       },
       "PASSWORD_CONFIRMATION": {
         "LABEL": "Bevestig nieuw wachtwoord",
         "ERROR": "Bevestig wachtwoord moet overeenkomen met het wachtwoord",
-        "PLACEHOLDER": "Please re-enter your new password"
+        "PLACEHOLDER": "Voer uw wachtwoord nogmaals in"
       }
     }
   },
@@ -233,11 +233,11 @@
     "SWITCH_ACCOUNT": "Switch account",
     "CONTACT_SUPPORT": "Contact support",
     "SELECTOR_SUBTITLE": "Select an account from the following list",
-    "PROFILE_SETTINGS": "Profile settings",
-    "KEYBOARD_SHORTCUTS": "Keyboard shortcuts",
-    "APPEARANCE": "Change appearance",
+    "PROFILE_SETTINGS": "Profiel instellingen",
+    "KEYBOARD_SHORTCUTS": "Snelkoppelingen",
+    "APPEARANCE": "Weergave aanpassen",
     "SUPER_ADMIN_CONSOLE": "SuperAdmin console",
-    "DOCS": "Read documentation",
+    "DOCS": "Documentatie",
     "CHANGELOG": "Changelog",
     "LOGOUT": "Log out"
   },
@@ -292,16 +292,16 @@
     }
   },
   "SIDEBAR": {
-    "NO_ITEMS": "No items",
-    "CURRENTLY_VIEWING_ACCOUNT": "Currently viewing:",
-    "SWITCH": "Switch",
-    "INBOX_VIEW": "Inbox View",
+    "NO_ITEMS": "Geen items",
+    "CURRENTLY_VIEWING_ACCOUNT": "Nu aan het bekijken:",
+    "SWITCH": "Wisselen",
+    "INBOX_VIEW": "Inbox weergave",
     "CONVERSATIONS": "Gesprekken",
-    "INBOX": "My Inbox",
+    "INBOX": "Mijn inbox",
     "ALL_CONVERSATIONS": "Alle gesprekken",
     "MENTIONED_CONVERSATIONS": "Vermeldingen",
-    "PARTICIPATING_CONVERSATIONS": "Participating",
-    "UNATTENDED_CONVERSATIONS": "Unattended",
+    "PARTICIPATING_CONVERSATIONS": "Volgend",
+    "UNATTENDED_CONVERSATIONS": "Onbeheerd",
     "REPORTS": "Rapporten",
     "SETTINGS": "Instellingen",
     "CONTACTS": "Contacten",
@@ -334,7 +334,7 @@
     "BILLING": "Billing",
     "CUSTOM_VIEWS_FOLDER": "Folders",
     "CUSTOM_VIEWS_SEGMENTS": "Segments",
-    "ALL_CONTACTS": "All Contacts",
+    "ALL_CONTACTS": "Alle contacten",
     "TAGGED_WITH": "Tagged with",
     "NEW_LABEL": "New label",
     "NEW_TEAM": "New team",
@@ -354,8 +354,8 @@
     "REPORTS_INBOX": "Postvak In",
     "REPORTS_TEAM": "Team",
     "AGENT_ASSIGNMENT": "Agent Assignment",
-    "SET_AVAILABILITY_TITLE": "Set yourself as",
-    "SET_YOUR_AVAILABILITY": "Set your availability",
+    "SET_AVAILABILITY_TITLE": "Zet jezelf als",
+    "SET_YOUR_AVAILABILITY": "Je beschikbaarheid",
     "SLA": "SLA",
     "CUSTOM_ROLES": "Custom Roles",
     "BETA": "Beta",
@@ -370,12 +370,12 @@
     },
     "CHANNELS": "Kanalen",
     "SET_AUTO_OFFLINE": {
-      "TEXT": "Mark offline automatically",
-      "INFO_TEXT": "Let the system automatically mark you offline when you aren't using the app or dashboard.",
-      "INFO_SHORT": "Automatically mark offline when you aren't using the app."
+      "TEXT": "Automatisch offline markeren",
+      "INFO_TEXT": "Laat het systeem je automatisch als offline markeren wanneer je de app of het dashboard niet gebruikt.",
+      "INFO_SHORT": "Automatisch als offline markeren wanneer je de app niet gebruikt."
     },
     "DOCS": "Read docs",
-    "SECURITY": "Security"
+    "SECURITY": "Beveiliging"
   },
   "BILLING_SETTINGS": {
     "TITLE": "Billing",
@@ -408,8 +408,8 @@
     "NO_BILLING_USER": "Your billing account is being configured. Please refresh the page and try again."
   },
   "SECURITY_SETTINGS": {
-    "TITLE": "Security",
-    "DESCRIPTION": "Manage your account security settings.",
+    "TITLE": "Beveiliging",
+    "DESCRIPTION": "Beheer je accountbeveiligingsinstellingen.",
     "LINK_TEXT": "Learn more about SAML SSO",
     "SAML": {
       "TITLE": "SAML SSO",
@@ -497,22 +497,22 @@
     }
   },
   "KEYBOARD_SHORTCUTS": {
-    "TOGGLE_MODAL": "View all shortcuts",
+    "TOGGLE_MODAL": "Bekijk alle snelkoppelingen",
     "TITLE": {
-      "OPEN_CONVERSATION": "Open conversation",
-      "RESOLVE_AND_NEXT": "Resolve and move to next",
-      "NAVIGATE_DROPDOWN": "Navigate dropdown items",
-      "RESOLVE_CONVERSATION": "Resolve Conversation",
-      "GO_TO_CONVERSATION_DASHBOARD": "Go to Conversation Dashboard",
-      "ADD_ATTACHMENT": "Add Attachment",
-      "GO_TO_CONTACTS_DASHBOARD": "Go to Contacts Dashboard",
-      "TOGGLE_SIDEBAR": "Toggle Sidebar",
-      "GO_TO_REPORTS_SIDEBAR": "Go to Reports sidebar",
-      "MOVE_TO_NEXT_TAB": "Move to next tab in conversation list",
-      "GO_TO_SETTINGS": "Go to Settings",
-      "SWITCH_TO_PRIVATE_NOTE": "Switch to Private Note",
-      "SWITCH_TO_REPLY": "Switch to Reply",
-      "TOGGLE_SNOOZE_DROPDOWN": "Toggle snooze dropdown"
+      "OPEN_CONVERSATION": "Open conversatie",
+      "RESOLVE_AND_NEXT": "Oplossen en door naar volgende",
+      "NAVIGATE_DROPDOWN": "Dropdown-items navigeren",
+      "RESOLVE_CONVERSATION": "Conversatie oplossen",
+      "GO_TO_CONVERSATION_DASHBOARD": "Ga naar conversaties",
+      "ADD_ATTACHMENT": "Bijlage toevoegen",
+      "GO_TO_CONTACTS_DASHBOARD": "Ga naar contactpersonen",
+      "TOGGLE_SIDEBAR": "Zijbalk in- of uitschakelen",
+      "GO_TO_REPORTS_SIDEBAR": "Ga naar rapportages",
+      "MOVE_TO_NEXT_TAB": "Naar het volgende tabblad in de conversatielijst gaan",
+      "GO_TO_SETTINGS": "Ga naar instellingen",
+      "SWITCH_TO_PRIVATE_NOTE": "Overschakelen naar Privénotitie",
+      "SWITCH_TO_REPLY": "Overschakelen naar Antwoord",
+      "TOGGLE_SNOOZE_DROPDOWN": "Dempen-dropdown in- of uitschakelen"
     }
   },
   "ASSIGNMENT_POLICY": {
