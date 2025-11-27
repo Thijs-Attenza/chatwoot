@@ -2,6 +2,7 @@
 import { ref, onMounted } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useRouter, useRoute } from 'vue-router';
+import { useStore } from 'vuex';
 import { parseBoolean } from '@chatwoot/utils';
 import mfaAPI from 'dashboard/api/mfa';
 import { useAlert } from 'dashboard/composables';
@@ -12,6 +13,7 @@ import MfaManagementActions from './MfaManagementActions.vue';
 const { t } = useI18n();
 const router = useRouter();
 const route = useRoute();
+const store = useStore();
 
 // State
 const mfaEnabled = ref(false);
@@ -94,6 +96,7 @@ const completeMfaSetup = () => {
   mfaEnabled.value = true;
   backupCodesGenerated.value = true;
   showSetup.value = false;
+  store.dispatch('set2FaEnabled', true);
   useAlert(t('MFA_SETTINGS.SETUP.SUCCESS'));
 };
 
@@ -106,6 +109,7 @@ const cancelSetup = () => {
 const disableMfa = async ({ password, otpCode }) => {
   try {
     await mfaAPI.disable(password, otpCode);
+    store.dispatch('set2FaEnabled', false);
     mfaEnabled.value = false;
     backupCodesGenerated.value = false;
     managementActionsRef.value?.resetDisableForm();

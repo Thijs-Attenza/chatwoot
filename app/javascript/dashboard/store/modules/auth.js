@@ -113,6 +113,15 @@ export const actions = {
       }
     }
   },
+
+  set2FaEnabled({ commit, state: $state }, status) {
+    if ($state.currentUser) {
+      let currentUser = $state.currentUser;
+      currentUser.two_factor_enabled = status;
+      commit(types.SET_CURRENT_USER, currentUser);
+    }
+  },
+
   async setUser({ commit, dispatch }) {
     if (authAPI.hasAuthCookie()) {
       await dispatch('validityCheck');

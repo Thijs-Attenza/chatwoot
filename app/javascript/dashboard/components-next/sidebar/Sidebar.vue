@@ -69,6 +69,7 @@ provideSidebarContext({
   setExpandedItem,
 });
 
+const currentUser = useMapGetter('getCurrentUser');
 const inboxes = useMapGetter('inboxes/getInboxes');
 const labels = useMapGetter('labels/getLabelsOnSidebar');
 const teams = useMapGetter('teams/getMyTeams');
@@ -585,6 +586,7 @@ const menuItems = computed(() => {
 
 <template>
   <aside
+    v-show="currentUser && currentUser.two_factor_enabled"
     v-on-click-outside="[
       closeMobileSidebar,
       { ignore: ['#mobile-sidebar-launcher'] },
@@ -658,6 +660,7 @@ const menuItems = computed(() => {
         class="p-1 flex-shrink-0 flex w-full justify-between z-10 gap-2 items-center border-t border-n-weak shadow-[0px_-2px_4px_0px_rgba(27,28,29,0.02)]"
       >
         <SidebarProfileMenu
+          :current-user="currentUser"
           @open-key-shortcut-modal="emit('openKeyShortcutModal')"
         />
       </div>

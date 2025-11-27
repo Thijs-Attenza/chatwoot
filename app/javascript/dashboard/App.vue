@@ -10,7 +10,7 @@ import { useRouter } from 'vue-router';
 import { useStore } from 'dashboard/composables/store';
 import WootSnackbarBox from './components/SnackbarContainer.vue';
 import { setColorTheme } from './helper/themeHelper';
-import { isOnOnboardingView } from 'v3/helpers/RouteHelper';
+import { isOnOnboardingView, isMFAView } from 'v3/helpers/RouteHelper';
 import { useAccount } from 'dashboard/composables/useAccount';
 import { useFontSize } from 'dashboard/composables/useFontSize';
 import {
@@ -61,12 +61,39 @@ export default {
       authUIFlags: 'getAuthUIFlags',
       accountUIFlags: 'accounts/getUIFlags',
     }),
+    userHas2FaEnabled() {
+      if (this.authUIFlags.isFetching || this.accountUIFlags.isFetchingItem) {
+        return null;
+      }
+
+      if (this.currentUser) {
+        return this.currentUser.two_factor_enabled;
+      }
+
+      return null;
+    },
     hideOnOnboardingView() {
       return !isOnOnboardingView(this.$route);
+    },
+    isMfaView() {
+      return isMFAView(this.$route);
     },
   },
 
   watch: {
+    userHas2FaEnabled: {
+      immediate: true,
+      handler(newValue) {
+        if (newValue === false && this.isMfaView === false) {
+          this.$router.push({
+            name: 'profile_settings_mfa',
+            params: {
+              accountId: this.currentAccountId,
+            },
+          });
+        }
+      },
+    },
     currentAccountId: {
       immediate: true,
       handler() {

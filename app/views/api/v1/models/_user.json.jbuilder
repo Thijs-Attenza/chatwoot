@@ -1,4 +1,5 @@
 json.access_token resource.access_token.token
+json.two_factor_enabled resource.otp_required_for_login
 json.account_id resource.active_account_user&.account_id
 json.available_name resource.available_name
 json.avatar_url resource.avatar_url
