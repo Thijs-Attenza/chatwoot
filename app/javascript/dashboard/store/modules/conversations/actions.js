@@ -37,6 +37,17 @@ const actions = {
     }
   },
 
+  fetchConversationStatus: async ({ dispatch }, inboxId) => {
+    try {
+      const {
+        data: { meta },
+      } = await ConversationApi.meta({ inboxId: inboxId });
+      dispatch('conversationMenuStats/set', { inboxId, meta });
+    } catch (error) {
+      // Handle error
+    }
+  },
+
   fetchAllConversations: async ({ commit, state, dispatch }) => {
     commit(types.SET_LIST_LOADING_STATUS);
     try {

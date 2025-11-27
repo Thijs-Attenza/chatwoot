@@ -25,6 +25,7 @@ import conversationPage from './modules/conversationPage';
 import conversations from './modules/conversations';
 import conversationSearch from './modules/conversationSearch';
 import conversationStats from './modules/conversationStats';
+import conversationMenuStats from './modules/conversationMenuStats';
 import conversationTypingStatus from './modules/conversationTypingStatus';
 import conversationWatchers from './modules/conversationWatchers';
 import csat from './modules/csat';
@@ -89,6 +90,7 @@ export default createStore({
     conversations,
     conversationSearch,
     conversationStats,
+    conversationMenuStats,
     conversationTypingStatus,
     conversationWatchers,
     csat,
