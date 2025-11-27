@@ -105,10 +105,13 @@ const showDeleteFoldersModal = ref(false);
 const isContextMenuOpen = ref(false);
 const appliedFilter = ref([]);
 const advancedFilterTypes = ref(
-  advancedFilterOptions.map(filter => ({
-    ...filter,
-    attributeName: t(`FILTER.ATTRIBUTES.${filter.attributeI18nKey}`),
-  }))
+  advancedFilterOptions.map(filter => {
+    return {
+      ...filter,
+      // eslint-disable-next-line @intlify/vue-i18n/no-dynamic-keys
+      attributeName: t(`FILTER.ATTRIBUTES.${filter.attributeI18nKey}`),
+    };
+  })
 );
 
 const currentUser = useMapGetter('getCurrentUser');
@@ -204,6 +207,7 @@ const assigneeTabItems = computed(() => {
     item => item.permissions
   ).map(({ key, count: countKey }) => ({
     key,
+    // eslint-disable-next-line @intlify/vue-i18n/no-dynamic-keys
     name: t(`CHAT_LIST.ASSIGNEE_TYPE_TABS.${key}`),
     count: conversationStats.value[countKey] || 0,
   }));
@@ -759,6 +763,7 @@ function toggleSelectAll(check) {
 useEmitter('fetch_conversation_stats', () => {
   if (hasAppliedFiltersOrActiveFolders.value) return;
   store.dispatch('conversationStats/get', conversationFilters.value);
+  store.dispatch('conversationMenuStats/getAll');
 });
 
 useEventListener(conversationDynamicScroller, 'scroll', handleScroll);
