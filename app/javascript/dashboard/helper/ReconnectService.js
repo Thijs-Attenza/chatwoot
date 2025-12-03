@@ -56,6 +56,7 @@ class ReconnectService {
         this.getSecondsSinceDisconnect() + DISCONNECT_DELAY_THRESHOLD,
     });
     await this.store.dispatch('fetchAllConversations');
+    await this.store.dispatch('fetchConversationStatus');
     // Reset the updatedWithin in the store chat list filter after fetching conversations when the user is reconnected
     await this.store.dispatch('updateChatListFilters', {
       updatedWithin: null,

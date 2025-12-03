@@ -343,6 +343,7 @@ const actions = {
       await ConversationApi.delete(conversationId);
       commit(types.DELETE_CONVERSATION, conversationId);
       dispatch('conversationStats/get', {}, { root: true });
+      dispatch('conversationMenuStats/getAll');
     } catch (error) {
       throw new Error(error);
     }
