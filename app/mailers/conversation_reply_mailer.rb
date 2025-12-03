@@ -7,6 +7,7 @@ class ConversationReplyMailer < ApplicationMailer
   include ReferencesHeaderBuilder
   default from: ENV.fetch('MAILER_SENDER_EMAIL', 'Chatwoot <accounts@chatwoot.com>')
   layout :choose_layout
+  RECAP_LIMIT = (ENV['EMAIL_RECAP_LIMIT'] || 5).to_i
 
   def reply_with_summary(conversation, last_queued_id)
     return unless smtp_config_set_or_development?
@@ -39,6 +40,19 @@ class ConversationReplyMailer < ApplicationMailer
 
     init_conversation_attributes(message.conversation)
     @message = message
+    @conversation = message.conversation
+
+
+    recap_messages = @conversation.messages
+                                  .where('id < ?', message.id)
+                                  .includes(:sender, { conversation: :inbox })
+                                  .order(id: :desc)
+                                  .limit(RECAP_LIMIT)
+                                  .to_a
+    recap_messages.reverse!
+
+    @messages = recap_messages.select(&:email_reply_summarizable?)
+
     prepare_mail(true)
   end
 
