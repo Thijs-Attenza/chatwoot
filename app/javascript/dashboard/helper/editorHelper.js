@@ -10,7 +10,7 @@ import * as Sentry from '@sentry/vue';
  * The delimiter used to separate the signature from the rest of the body.
  * @type {string}
  */
-export const SIGNATURE_DELIMITER = '--';
+export const SIGNATURE_DELIMITER = '';
 
 /**
  * Parse and Serialize the markdown text to remove any extra spaces or new lines
@@ -44,7 +44,7 @@ export function cleanSignature(signature) {
  * @returns {string} - The signature with the delimiter added.
  */
 function appendDelimiter(signature) {
-  return `${SIGNATURE_DELIMITER}\n\n${cleanSignature(signature)}`;
+  return `${cleanSignature(signature)}`;
 }
 
 /**
@@ -81,7 +81,7 @@ export function appendSignature(body, signature) {
     return body;
   }
 
-  return `${body.trimEnd()}\n\n${appendDelimiter(cleanedSignature)}`;
+  return `${body.trimEnd()}\n\n\n${appendDelimiter(cleanedSignature)}`;
 }
 
 /**
