@@ -15,6 +15,10 @@ import {
 } from 'next/dropdown-menu/base';
 import CustomBrandPolicyWrapper from '../../components/CustomBrandPolicyWrapper.vue';
 
+const props = defineProps({
+  currentUser: { type: Object, default: () => ({}) },
+});
+
 const emit = defineEmits(['close', 'openKeyShortcutModal']);
 
 defineOptions({
@@ -23,7 +27,6 @@ defineOptions({
 
 const { t } = useI18n();
 
-const currentUser = useMapGetter('getCurrentUser');
 const currentUserAvailability = useMapGetter('getCurrentUserAvailability');
 const accountId = useMapGetter('getCurrentAccountId');
 const globalConfig = useMapGetter('globalConfig/get');
@@ -78,7 +81,7 @@ const menuItems = computed(() => {
       },
     },
     {
-      show: true,
+      show: false,
       showOnCustomBrandedInstance: false,
       label: t('SIDEBAR_ITEMS.DOCS'),
       icon: 'i-lucide-book',
@@ -87,7 +90,7 @@ const menuItems = computed(() => {
       target: '_blank',
     },
     {
-      show: true,
+      show: false,
       showOnCustomBrandedInstance: false,
       label: t('SIDEBAR_ITEMS.CHANGELOG'),
       icon: 'i-lucide-scroll-text',
@@ -96,7 +99,7 @@ const menuItems = computed(() => {
       target: '_blank',
     },
     {
-      show: currentUser.value.type === 'SuperAdmin',
+      show: props.currentUser.type === 'SuperAdmin',
       showOnCustomBrandedInstance: true,
       label: t('SIDEBAR_ITEMS.SUPER_ADMIN_CONSOLE'),
       icon: 'i-lucide-castle',
@@ -129,18 +132,18 @@ const allowedMenuItems = computed(() => {
       >
         <Avatar
           :size="32"
-          :name="currentUser.available_name"
-          :src="currentUser.avatar_url"
+          :name="props.currentUser.available_name"
+          :src="props.currentUser.avatar_url"
           :status="currentUserAvailability"
           class="flex-shrink-0"
           rounded-full
         />
         <div class="min-w-0">
           <div class="text-sm font-medium leading-4 truncate text-n-slate-12">
-            {{ currentUser.available_name }}
+            {{ props.currentUser.available_name }}
           </div>
           <div class="text-xs truncate text-n-slate-11">
-            {{ currentUser.email }}
+            {{ props.currentUser.email }}
           </div>
         </div>
       </button>

@@ -86,7 +86,7 @@
     },
     "EDIT": {
       "TITLE": "Aangepast attribuut bewerken",
-      "UPDATE_BUTTON_TEXT": "Vernieuwen",
+      "UPDATE_BUTTON_TEXT": "Opslaan",
       "TYPE": {
         "LIST": {
           "LABEL": "Toon waardes",

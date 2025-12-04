@@ -65,7 +65,7 @@
     },
     "EDIT": {
       "TITLE": "Automatiseringsregel bewerken",
-      "SUBMIT": "Vernieuwen",
+      "SUBMIT": "Opslaan",
       "CANCEL_BUTTON_TEXT": "Annuleren",
       "API": {
         "SUCCESS_MESSAGE": "Automatiseringsregel succesvol bijgewerkt",
