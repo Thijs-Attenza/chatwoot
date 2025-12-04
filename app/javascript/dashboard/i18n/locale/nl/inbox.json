@@ -23,6 +23,7 @@
       "CONVERSATION_ASSIGNMENT": "Een conversatie is aan jou toegewezen",
       "ASSIGNED_CONVERSATION_NEW_MESSAGE": "Nieuw bericht in een toegewezen conversatie",
       "PARTICIPATING_CONVERSATION_NEW_MESSAGE": "Nieuw bericht in een gevolgde conversatie",
+      "ALL_NEW_MESSAGES": "Nieuw bericht in een conversatie",
       "SLA_MISSED_FIRST_RESPONSE": "SLA target first response missed for conversation",
       "SLA_MISSED_NEXT_RESPONSE": "SLA target next response missed for conversation",
       "SLA_MISSED_RESOLUTION": "SLA target resolution missed for conversation"
@@ -35,6 +36,7 @@
       "SLA_MISSED_NEXT_RESPONSE": "SLA breach",
       "SLA_MISSED_RESOLUTION": "SLA breach",
       "PARTICIPATING_CONVERSATION_NEW_MESSAGE": "Nieuw bericht",
+      "ALL_NEW_MESSAGES": "Nieuw bericht",
       "ASSIGNED_CONVERSATION_NEW_MESSAGE": "Nieuw bericht",
       "SNOOZED_UNTIL": "Gedempt voor {time}",
       "SNOOZED_ENDS": "Dempen beëindigd"
