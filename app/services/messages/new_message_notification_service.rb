@@ -6,13 +6,35 @@ class Messages::NewMessageNotificationService
 
     notify_conversation_assignee
     notify_participating_users
+    notify_all_inbox_participants
   end
 
   private
 
   delegate :conversation, :sender, :account, to: :message
 
+  def notify_all_inbox_participants
+    return unless message.incoming?
+    return if conversation.messages.count <= 1
+
+    participating_users = conversation.inbox.inbox_members.map(&:user)
+    participating_users -= [sender] if sender.is_a?(User)
+
+    participating_users.uniq.each do |inboxMember|
+      next if already_notified?(inboxMember)
+
+      NotificationBuilder.new(
+        notification_type: 'all_new_messages',
+        user: inboxMember,
+        account: account,
+        primary_actor: message.conversation,
+        secondary_actor: message
+      ).perform
+    end
+  end
+
   def notify_conversation_assignee
+    return unless message.incoming?
     return if conversation.assignee.blank?
     return if already_notified?(conversation.assignee)
     return if conversation.assignee == sender
@@ -27,6 +49,8 @@ class Messages::NewMessageNotificationService
   end
 
   def notify_participating_users
+    return unless message.incoming?
+
     participating_users = conversation.conversation_participants.map(&:user)
     participating_users -= [sender] if sender.is_a?(User)
 
