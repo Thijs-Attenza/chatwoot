@@ -24,6 +24,7 @@ nl:
       not_required: 'Reauthorization is not required for this inbox'
       invalid_channel: 'Invalid channel type for reauthorization'
   auth:
+    account_deleted: 'Ongeldige logingegevens.'
     saml:
       invalid_email: 'Voer een geldig e-mailadres in'
       authentication_failed: 'Authentication failed. Please check your credentials and try again.'
