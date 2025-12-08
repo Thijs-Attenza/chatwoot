@@ -43,6 +43,10 @@ module UserAttributeHelpers
     current_account_user&.role
   end
 
+  def deleted?
+    current_account_user&.deleted?
+  end
+
   # Used internally for Chatwoot in Chatwoot
   def hmac_identifier
     hmac_key = GlobalConfig.get('CHATWOOT_INBOX_HMAC_KEY')['CHATWOOT_INBOX_HMAC_KEY']
