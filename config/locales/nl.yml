@@ -198,19 +198,19 @@ nl:
         error_code: 'Error code: %{error_code}'
     activity:
       captain:
-        resolved: 'Het gesprek werd als opgelost gemarkeerd door %{user_name} vanwege inactiviteit'
+        resolved: 'Het gesprek werd afgehandeld door %{user_name} vanwege inactiviteit'
         open: 'Het gesprek werd als open gemarkeerd door %{user_name}.'
       agent_bot:
         error_moved_to_open: '"Het gesprek werd als open gemarkeerd door het systeem vanwege een fout met de agent-bot.'
       status:
         resolved: 'Gesprek werd gemarkeerd door %{user_name}'
-        contact_resolved: 'Gesprek werd opgelost door %{contact_name}'
+        contact_resolved: 'Gesprek werd afgehandeld door %{contact_name}'
         open: 'Gesprek werd heropend door %{user_name}'
         pending: 'Gesprek werd gemarkeerd als in afwachting door %{user_name}'
         snoozed: 'Gesprek werd gedmept door %{user_name}'
-        auto_resolved_days: 'Gesprek werd door systeem gemarkeerd als opgelost na %{count} dagen inactiviteit'
-        auto_resolved_hours: 'Het gesprek werd als opgelost gemarkeerd door het systeem vanwege %{count} uur inactiviteit'
-        auto_resolved_minutes: 'Het gesprek werd als opgelost gemarkeerd door het systeem vanwege %{count} minuten inactiviteit'
+        auto_resolved_days: 'Gesprek werd door systeem afgehandeld na %{count} dagen inactiviteit'
+        auto_resolved_hours: 'Het gesprek werd afgehandeld door het systeem vanwege %{count} uur inactiviteit'
+        auto_resolved_minutes: 'Het gesprek werd afgehandeld door het systeem vanwege %{count} minuten inactiviteit'
         system_auto_open: Het systeem heeft het gesprek opnieuw geopend vanwege een nieuw binnenkomend bericht.
       priority:
         added: '%{user_name} heeft de prioriteit ingesteld op %{new_priority}'
@@ -240,7 +240,7 @@ nl:
         not_sent_due_to_messaging_window: 'Auto-resolve bericht niet verzonden vanwege beperkingen op uitgaande berichten'
       muted: '%{user_name} heeft het gesprek gedempt'
       unmuted: '%{user_name} heeft het gesprek van dempen afgehaald'
-      auto_resolution_message: 'Het gesprek wordt opgelost omdat het een tijdlang inactief is geweest. Start een nieuw gesprek als je verdere hulp nodig hebt.'
+      auto_resolution_message: 'Het gesprek wordt afgehandeld omdat het een tijdlang inactief is geweest. Start een nieuw gesprek als je verdere hulp nodig hebt.'
     templates:
       greeting_message_body: '%{account_name} reageert meestal binnen een paar uur.'
       ways_to_reach_you_message_body: 'Geef het team een manier om je te bereiken.'
