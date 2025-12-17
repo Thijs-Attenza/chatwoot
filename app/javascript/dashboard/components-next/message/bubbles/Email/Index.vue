@@ -1,4 +1,5 @@
 <script setup>
+import Autolinker from 'autolinker';
 import { computed, useTemplateRef, ref, onMounted } from 'vue';
 import { Letter } from 'vue-letter';
 import { sanitizeTextForRender } from '@chatwoot/utils';
@@ -72,13 +73,26 @@ const textToShow = computed(() => {
   return originalEmailText.value;
 });
 
+const autolinkerProperties = {
+  urls: {
+    schemeMatches: true,
+    tldMatches: false,
+    ipV4Matches: false,
+  },
+  email: false,
+  phone: false,
+  stripPrefix: false,
+  stripTrailingSlash: false,
+  truncate: { length: 128, location: 'middle' },
+};
+
 const fullHTML = computed(() => {
   // If translations exist and we're showing translations (not original)
   if (hasTranslations.value && !renderOriginal.value) {
     return translationContent.value;
   }
   // Otherwise show original HTML
-  return originalEmailHtml.value;
+  return Autolinker.link(originalEmailHtml.value, autolinkerProperties);
 });
 
 const unquotedHTML = computed(() =>
