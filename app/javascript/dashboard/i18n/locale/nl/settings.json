@@ -142,6 +142,7 @@
         "CONVERSATION_MENTION": "E-mail notificaties versturen wanneer u in een gesprek wordt genoemd",
         "ASSIGNED_CONVERSATION_NEW_MESSAGE": "E-mail notificaties verzenden wanneer een nieuw bericht is gemaakt in een toegewezen gesprek",
         "PARTICIPATING_CONVERSATION_NEW_MESSAGE": "E-mail notificaties verzenden wanneer een nieuw bericht is gemaakt in een deelnemend gesprek",
+        "ALL_NEW_MESSAGES": "E-mail notificaties verzenden wanneer een nieuw bericht is gemaakt in een gesprek",
         "SLA_MISSED_FIRST_RESPONSE": "Send email notifications when a conversation misses first response SLA",
         "SLA_MISSED_NEXT_RESPONSE": "Send email notifications when a conversation misses next response SLA",
         "SLA_MISSED_RESOLUTION": "Send email notifications when a conversation misses resolution SLA"
@@ -157,6 +158,7 @@
           "CONVERSATION_MENTION": "Je wordt genoemd in een gesprek",
           "ASSIGNED_CONVERSATION_NEW_MESSAGE": "Er is een nieuw bericht geplaatst in een aan jou toegewezen gesprek",
           "PARTICIPATING_CONVERSATION_NEW_MESSAGE": "Er is een nieuw bericht geplaatst in een gesprek waaraan je deelneemt",
+          "ALL_NEW_MESSAGES": "Er is een nieuw bericht geplaatst in een gesprek",
           "SLA_MISSED_FIRST_RESPONSE": "Een gesprek heeft de eerste reactietijd-SLA overschreden",
           "SLA_MISSED_NEXT_RESPONSE": "Een gesprek heeft de volgende reactietijd-SLA overschreden",
           "SLA_MISSED_RESOLUTION": "Een gesprek heeft de oplostijd-SLA overschreden"
@@ -175,6 +177,7 @@
         "CONVERSATION_MENTION": "Send push notifications when you are mentioned in a conversation",
         "ASSIGNED_CONVERSATION_NEW_MESSAGE": "Send push notifications when a new message is created in an assigned conversation",
         "PARTICIPATING_CONVERSATION_NEW_MESSAGE": "Send push notifications when a new message is created in a participating conversation",
+        "ALL_NEW_MESSAGES": "Send push notifications when a new message is created in any conversation",
         "HAS_ENABLED_PUSH": "Je hebt pushberichten voor deze browser ingeschakeld.",
         "REQUEST_PUSH": "Pushberichten inschakelen",
         "SLA_MISSED_FIRST_RESPONSE": "Send push notifications when a conversation misses first response SLA",
@@ -357,6 +360,7 @@
     "SET_AVAILABILITY_TITLE": "Zet jezelf als",
     "SET_YOUR_AVAILABILITY": "Je beschikbaarheid",
     "SLA": "SLA",
+    "VERSION": "Versie",
     "CUSTOM_ROLES": "Custom Roles",
     "BETA": "Beta",
     "REPORTS_OVERVIEW": "Overview",

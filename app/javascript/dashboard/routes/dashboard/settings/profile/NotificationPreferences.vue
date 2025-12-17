@@ -67,6 +67,9 @@ export default {
     this.$store.dispatch('userNotificationSettings/get');
   },
   methods: {
+    checkEmailChannelSupported(notificationType, type) {
+      return !(notificationType === 'all_new_messages' && type === 'email');
+    },
     checkFlagStatus(type, flagType) {
       const selectedFlags =
         type === 'email' ? this.selectedEmailFlags : this.selectedPushFlags;
@@ -213,6 +216,7 @@ export default {
             :class="`col-span-${type === 'push' ? 3 : 2}`"
           >
             <CheckBox
+              v-show="checkEmailChannelSupported(notification.value, type)"
               :value="`${type}_${notification.value}`"
               :is-checked="
                 checkFlagStatus(type, notification.value, selectedPushFlags)
@@ -235,6 +239,7 @@ export default {
           class="flex flex-row items-start gap-2"
         >
           <CheckBox
+            v-show="checkEmailChannelSupported(notification.value, 'email')"
             :id="`email_${notification.value}`"
             :value="`email_${notification.value}`"
             :is-checked="checkFlagStatus('email', notification.value)"

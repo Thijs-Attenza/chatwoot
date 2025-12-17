@@ -24,6 +24,7 @@ nl:
       not_required: 'Reauthorization is not required for this inbox'
       invalid_channel: 'Invalid channel type for reauthorization'
   auth:
+    account_deleted: 'Ongeldige logingegevens.'
     saml:
       invalid_email: 'Voer een geldig e-mailadres in'
       authentication_failed: 'Authentication failed. Please check your credentials and try again.'
@@ -165,13 +166,23 @@ nl:
         recorded_at: Datum opgenomen
   notifications:
     notification_title:
-      conversation_creation: 'Er is een gesprek (#%{display_id}) aangemaakt in %{inbox_name}'
-      conversation_assignment: 'Er is een gesprek (#%{display_id}) aan jou toegewezen'
-      assigned_conversation_new_message: 'Er is een nieuw bericht aangemaakt in gesprek (#%{display_id})'
-      conversation_mention: 'Je bent genoemd in gesprek (#%{display_id})'
+      conversation_creation: 'Er is een nieuwe conversatie gestart in %{inbox_name}'
+      conversation_creation_whatsapp: 'Nieuw whatsapp gesprek gestart door %{sender_name}'
+      conversation_creation_email: 'Nieuwe email van %{sender_name} in %{inbox_name}: "%{subject}"'
+      conversation_assignment: 'Er is een conversatie aan jou toegewezen'
+      assigned_conversation_new_message: 'Er is een nieuw bericht in een toegewezen conversatie'
+      assigned_conversation_new_message_whatsapp: '%{sender_name} heeft een whatsappje gestuurd in een toegewezen conversatie'
+      assigned_conversation_new_message_email: 'Nieuwe email van %{sender_name} in toegewezen email conversatie: "%{subject}"'
+      participating_conversation_new_message: 'Er is een nieuw bericht in een gevolgde conversatie'
+      participating_conversation_new_message_whatsapp: '%{sender_name} heeft een whatsappje gestuurd in een gevolgde conversatie'
+      participating_conversation_new_message_email: 'Nieuwe email van %{sender_name} in de gevolgde email conversatie: "%{subject}"'
+      conversation_mention: 'Je bent genoemd in een conversatie'
       sla_missed_first_response: 'SLA-doel eerste reactie gemist voor gesprek (#%{display_id})'
       sla_missed_next_response: 'SLA-doel volgende reactie gemist voor gesprek (#%{display_id})'
       sla_missed_resolution: 'SLA-doel oplossing gemist voor gesprek (#%{display_id})'
+      all_new_messages: 'Er is een nieuw bericht in een conversatie'
+      all_new_messages_whatsapp: '%{sender_name} heeft een whatsappje gestuurd in een conversatie'
+      all_new_messages_email: 'Nieuwe email van %{sender_name} in email conversatie "%{subject}"'
     attachment: 'Bijlage'
     no_content: 'Geen inhoud'
   conversations:

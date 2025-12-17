@@ -102,3 +102,4 @@ CLAUDE.local.md
 
 #Custom
 .pnpm-store/*
+postgres/*
