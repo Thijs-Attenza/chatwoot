@@ -24,6 +24,7 @@ nl:
       not_required: 'Reauthorization is not required for this inbox'
       invalid_channel: 'Invalid channel type for reauthorization'
   auth:
+    account_deleted: 'Ongeldige logingegevens.'
     saml:
       invalid_email: 'Voer een geldig e-mailadres in'
       authentication_failed: 'Authentication failed. Please check your credentials and try again.'
@@ -165,13 +166,23 @@ nl:
         recorded_at: Datum opgenomen
   notifications:
     notification_title:
-      conversation_creation: 'Er is een gesprek (#%{display_id}) aangemaakt in %{inbox_name}'
-      conversation_assignment: 'Er is een gesprek (#%{display_id}) aan jou toegewezen'
-      assigned_conversation_new_message: 'Er is een nieuw bericht aangemaakt in gesprek (#%{display_id})'
-      conversation_mention: 'Je bent genoemd in gesprek (#%{display_id})'
+      conversation_creation: 'Er is een nieuwe conversatie gestart in %{inbox_name}'
+      conversation_creation_whatsapp: 'Nieuw whatsapp gesprek gestart door %{sender_name}'
+      conversation_creation_email: 'Nieuwe email van %{sender_name} in %{inbox_name}: "%{subject}"'
+      conversation_assignment: 'Er is een conversatie aan jou toegewezen'
+      assigned_conversation_new_message: 'Er is een nieuw bericht in een toegewezen conversatie'
+      assigned_conversation_new_message_whatsapp: '%{sender_name} heeft een whatsappje gestuurd in een toegewezen conversatie'
+      assigned_conversation_new_message_email: 'Nieuwe email van %{sender_name} in toegewezen email conversatie: "%{subject}"'
+      participating_conversation_new_message: 'Er is een nieuw bericht in een gevolgde conversatie'
+      participating_conversation_new_message_whatsapp: '%{sender_name} heeft een whatsappje gestuurd in een gevolgde conversatie'
+      participating_conversation_new_message_email: 'Nieuwe email van %{sender_name} in de gevolgde email conversatie: "%{subject}"'
+      conversation_mention: 'Je bent genoemd in een conversatie'
       sla_missed_first_response: 'SLA-doel eerste reactie gemist voor gesprek (#%{display_id})'
       sla_missed_next_response: 'SLA-doel volgende reactie gemist voor gesprek (#%{display_id})'
       sla_missed_resolution: 'SLA-doel oplossing gemist voor gesprek (#%{display_id})'
+      all_new_messages: 'Er is een nieuw bericht in een conversatie'
+      all_new_messages_whatsapp: '%{sender_name} heeft een whatsappje gestuurd in een conversatie'
+      all_new_messages_email: 'Nieuwe email van %{sender_name} in email conversatie "%{subject}"'
     attachment: 'Bijlage'
     no_content: 'Geen inhoud'
   conversations:
@@ -187,19 +198,19 @@ nl:
         error_code: 'Error code: %{error_code}'
     activity:
       captain:
-        resolved: 'Het gesprek werd als opgelost gemarkeerd door %{user_name} vanwege inactiviteit'
+        resolved: 'Het gesprek werd afgehandeld door %{user_name} vanwege inactiviteit'
         open: 'Het gesprek werd als open gemarkeerd door %{user_name}.'
       agent_bot:
         error_moved_to_open: '"Het gesprek werd als open gemarkeerd door het systeem vanwege een fout met de agent-bot.'
       status:
         resolved: 'Gesprek werd gemarkeerd door %{user_name}'
-        contact_resolved: 'Gesprek werd opgelost door %{contact_name}'
+        contact_resolved: 'Gesprek werd afgehandeld door %{contact_name}'
         open: 'Gesprek werd heropend door %{user_name}'
         pending: 'Gesprek werd gemarkeerd als in afwachting door %{user_name}'
         snoozed: 'Gesprek werd gedmept door %{user_name}'
-        auto_resolved_days: 'Gesprek werd door systeem gemarkeerd als opgelost na %{count} dagen inactiviteit'
-        auto_resolved_hours: 'Het gesprek werd als opgelost gemarkeerd door het systeem vanwege %{count} uur inactiviteit'
-        auto_resolved_minutes: 'Het gesprek werd als opgelost gemarkeerd door het systeem vanwege %{count} minuten inactiviteit'
+        auto_resolved_days: 'Gesprek werd door systeem afgehandeld na %{count} dagen inactiviteit'
+        auto_resolved_hours: 'Het gesprek werd afgehandeld door het systeem vanwege %{count} uur inactiviteit'
+        auto_resolved_minutes: 'Het gesprek werd afgehandeld door het systeem vanwege %{count} minuten inactiviteit'
         system_auto_open: Het systeem heeft het gesprek opnieuw geopend vanwege een nieuw binnenkomend bericht.
       priority:
         added: '%{user_name} heeft de prioriteit ingesteld op %{new_priority}'
@@ -229,7 +240,7 @@ nl:
         not_sent_due_to_messaging_window: 'Auto-resolve bericht niet verzonden vanwege beperkingen op uitgaande berichten'
       muted: '%{user_name} heeft het gesprek gedempt'
       unmuted: '%{user_name} heeft het gesprek van dempen afgehaald'
-      auto_resolution_message: 'Het gesprek wordt opgelost omdat het een tijdlang inactief is geweest. Start een nieuw gesprek als je verdere hulp nodig hebt.'
+      auto_resolution_message: 'Het gesprek wordt afgehandeld omdat het een tijdlang inactief is geweest. Start een nieuw gesprek als je verdere hulp nodig hebt.'
     templates:
       greeting_message_body: '%{account_name} reageert meestal binnen een paar uur.'
       ways_to_reach_you_message_body: 'Geef het team een manier om je te bereiken.'

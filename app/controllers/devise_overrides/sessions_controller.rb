@@ -13,6 +13,8 @@ class DeviseOverrides::SessionsController < DeviseTokenAuth::SessionsController
     return handle_sso_authentication if sso_authentication_request?
 
     user = find_user_for_authentication
+    return handle_user_blocked if user and user.account_users.activeUsers.find_by(user_id: user.id) == nil
+
     return handle_mfa_required(user) if user&.mfa_enabled?
 
     # Only proceed with standard authentication if no MFA is required
@@ -48,6 +50,10 @@ class DeviseOverrides::SessionsController < DeviseTokenAuth::SessionsController
     authenticate_resource_with_sso_token
     yield @resource if block_given?
     render_create_success
+  end
+
+  def handle_user_blocked
+    render_error(401, I18n.t('auth.account_deleted'))
   end
 
   def login_page_url(error: nil)

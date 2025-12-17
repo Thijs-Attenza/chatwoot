@@ -1,5 +1,5 @@
 shared: &shared
-  version: '4.8.0-ATZ-2'
+  version: '4.8.0-ATZ-6'
 
 development:
   <<: *shared

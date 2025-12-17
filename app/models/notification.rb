@@ -43,7 +43,8 @@ class Notification < ApplicationRecord
     participating_conversation_new_message: 5,
     sla_missed_first_response: 6,
     sla_missed_next_response: 7,
-    sla_missed_resolution: 8
+    sla_missed_resolution: 8,
+    all_new_messages: 9
   }.freeze
 
   enum notification_type: NOTIFICATION_TYPES
@@ -91,23 +92,41 @@ class Notification < ApplicationRecord
       'conversation_creation' => 'notifications.notification_title.conversation_creation',
       'conversation_assignment' => 'notifications.notification_title.conversation_assignment',
       'assigned_conversation_new_message' => 'notifications.notification_title.assigned_conversation_new_message',
-      'participating_conversation_new_message' => 'notifications.notification_title.assigned_conversation_new_message',
+      'participating_conversation_new_message' => 'notifications.notification_title.participating_conversation_new_message',
       'conversation_mention' => 'notifications.notification_title.conversation_mention',
       'sla_missed_first_response' => 'notifications.notification_title.sla_missed_first_response',
       'sla_missed_next_response' => 'notifications.notification_title.sla_missed_next_response',
-      'sla_missed_resolution' => 'notifications.notification_title.sla_missed_resolution'
+      'sla_missed_resolution' => 'notifications.notification_title.sla_missed_resolution',
+      'all_new_messages' => 'notifications.notification_title.all_new_messages',
     }
 
     i18n_key = notification_title_map[notification_type]
     return '' unless i18n_key
 
     if notification_type == 'conversation_creation'
-      I18n.t(i18n_key, display_id: conversation.display_id, inbox_name: primary_actor.inbox.name)
-    elsif %w[conversation_assignment assigned_conversation_new_message participating_conversation_new_message
-             conversation_mention].include?(notification_type)
-      I18n.t(i18n_key, display_id: conversation.display_id)
+      if primary_actor.inbox.email?
+        from = conversation.last_incoming_message&.sender&.try(:available_name) || conversation.last_incoming_message&.sender&.name || 'Onbekend'
+        I18n.t(i18n_key + '_email', :locale => :nl, inbox_name: primary_actor.inbox.name, subject: conversation.additional_attributes['mail_subject'], sender_name: from)
+      elsif primary_actor.inbox.api?
+        from = conversation.last_incoming_message&.sender&.try(:available_name) || conversation.last_incoming_message&.sender&.name || conversation.last_incoming_message&.sender&.phone_number || 'Onbekend'
+        I18n.t(i18n_key + '_whatsapp', :locale => :nl, sender_name: from)
+      else
+        I18n.t(i18n_key, :locale => :nl, display_id: conversation.display_id, inbox_name: primary_actor.inbox.name)
+      end
+    elsif %w[all_new_messages assigned_conversation_new_message participating_conversation_new_message].include?(notification_type)
+      if conversation.inbox.email?
+        from = secondary_actor&.sender&.try(:available_name) || secondary_actor&.sender&.name || 'Onbekend'
+        I18n.t(i18n_key + '_email', :locale => :nl, sender_name: from, subject: conversation.additional_attributes['mail_subject'])
+      elsif conversation.inbox.api?
+        from = secondary_actor&.sender&.try(:available_name) || secondary_actor&.sender&.name || secondary_actor&.sender&.phone_number || 'Onbekend'
+        I18n.t(i18n_key + '_whatsapp', :locale => :nl, sender_name: from)
+      else
+        I18n.t(i18n_key, :locale => :nl)
+      end
+    elsif %w[conversation_assignment conversation_mention].include?(notification_type)
+      I18n.t(i18n_key, :locale => :nl, display_id: conversation.display_id)
     else
-      I18n.t(i18n_key, display_id: primary_actor.display_id)
+      I18n.t(i18n_key, :locale => :nl, display_id: primary_actor.display_id)
     end
   end
   # rubocop:enable Metrics/MethodLength
@@ -116,7 +135,7 @@ class Notification < ApplicationRecord
     case notification_type
     when 'conversation_creation', 'sla_missed_first_response'
       message_body(conversation.messages.first)
-    when 'assigned_conversation_new_message', 'participating_conversation_new_message', 'conversation_mention'
+    when 'assigned_conversation_new_message', 'participating_conversation_new_message', 'conversation_mention', 'all_new_messages'
       message_body(secondary_actor)
     when 'conversation_assignment', 'sla_missed_next_response', 'sla_missed_resolution'
       message_body((conversation.messages.incoming.last || conversation.messages.outgoing.last))

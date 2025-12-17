@@ -83,7 +83,7 @@
       "YOU_ANSWERED": "You answered"
     },
     "HEADER": {
-      "RESOLVE_ACTION": "Oplossen",
+      "RESOLVE_ACTION": "Afhandelen",
       "REOPEN_ACTION": "Heropenen",
       "OPEN_ACTION": "Open",
       "MORE_ACTIONS": "More actions",
@@ -145,7 +145,7 @@
     },
     "CARD_CONTEXT_MENU": {
       "PENDING": "Markeren als in afwachting van",
-      "RESOLVED": "Markeer als opgelost",
+      "RESOLVED": "Markeer als afgehandeld",
       "MARK_AS_UNREAD": "Markeer als ongelezen",
       "MARK_AS_READ": "Mark as read",
       "REOPEN": "Heropen gesprek",

@@ -28,8 +28,9 @@ class Api::V1::Accounts::AgentsController < Api::V1::Accounts::BaseController
   end
 
   def destroy
-    @agent.current_account_user.destroy!
-    delete_user_record(@agent)
+    soft_delete_user_record(@agent)
+    # TODO Logout target user?
+
     head :ok
   end
 
@@ -84,7 +85,7 @@ class Api::V1::Accounts::AgentsController < Api::V1::Accounts::BaseController
   end
 
   def agents
-    @agents ||= Current.account.users.order_by_full_name.includes(:account_users, { avatar_attachment: [:blob] })
+    @agents ||= Current.account.users.merge(AccountUser.activeUsers).order_by_full_name.includes(:account_users, { avatar_attachment: [:blob] })
   end
 
   def validate_limit_for_bulk_create
@@ -107,6 +108,10 @@ class Api::V1::Accounts::AgentsController < Api::V1::Accounts::BaseController
 
   def delete_user_record(agent)
     DeleteObjectJob.perform_later(agent) if agent.reload.account_users.blank?
+  end
+
+  def soft_delete_user_record(agent)
+    agent.current_account_user.update!(deleted_at: Time.now)
   end
 end
 

@@ -6,9 +6,11 @@
 #  active_at                :datetime
 #  auto_offline             :boolean          default(TRUE), not null
 #  availability             :integer          default("online"), not null
+#  deleted_at               :datetime
 #  role                     :integer          default("agent")
 #  created_at               :datetime         not null
 #  updated_at               :datetime         not null
+#  deleted_at               :datetime         not null
 #  account_id               :bigint
 #  agent_capacity_policy_id :bigint
 #  custom_role_id           :bigint
@@ -40,6 +42,8 @@ class AccountUser < ApplicationRecord
   after_destroy :notify_deletion, :remove_user_from_account
   after_save :update_presence_in_redis, if: :saved_change_to_availability?
 
+  scope :activeUsers, -> { where(deleted_at: nil) }
+
   validates :user_id, uniqueness: { scope: :account_id }
 
   def create_notification_setting
@@ -67,6 +71,10 @@ class AccountUser < ApplicationRecord
   end
 
   private
+
+  def deleted?
+    deleted_at != nil
+  end
 
   def notify_creation
     Rails.configuration.dispatcher.dispatch(AGENT_ADDED, Time.zone.now, account: account)
