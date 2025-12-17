@@ -1396,7 +1396,7 @@ export default {
       @cancel="hideWhatsappTemplatesModal"
     />
     <EmailTemplates
-      :inbox-id="inbox.id"
+      :contact="currentContact"
       :show="showEmailTemplatesModal"
       @close="hideEmailTemplatesModal"
       @on-send="onSendEmailReply"

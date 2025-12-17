@@ -35,6 +35,7 @@ const emit = defineEmits([
   'sendMessage',
   'sendWhatsappMessage',
   'sendTwilioMessage',
+  'openEmailTemplateSelector',
   'insertEmoji',
   'addSignature',
   'removeSignature',
@@ -179,6 +180,15 @@ useKeyboardEvents(keyboardEvents);
         :inbox-id="inboxId"
         @send-message="emit('sendTwilioMessage', $event)"
       />
+      <div v-if="hasSelectedInbox" class="relative">
+        <Button
+          icon="i-ph-article"
+          color="slate"
+          size="sm"
+          class="!w-10"
+          @click="emit('openEmailTemplateSelector', $event)"
+        />
+      </div>
       <div
         v-if="shouldShowEmojiButton"
         v-on-click-outside="() => (isEmojiPickerOpen = false)"

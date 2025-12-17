@@ -227,6 +227,7 @@ const tableHeaders = computed(() => {
         :id="activeResponse.id"
         :edshort-code="activeResponse.short_code"
         :edcontent="activeResponse.content"
+        :edtemplate="activeResponse.is_template"
         :on-close="hideEditPopup"
       />
     </woot-modal>

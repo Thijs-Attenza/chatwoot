@@ -286,8 +286,8 @@ export default {
   <div class="flex justify-between p-3" :class="wrapClass">
     <div class="left-wrap">
       <NextButton
-        v-tooltip.top-end="$t('CONVERSATION.REPLYBOX.TIP_EMOJI_ICON')"
-        icon="i-ph-keyboard"
+        v-tooltip.top-end="$t('CONVERSATION.REPLYBOX.TIP_TEMPLATE_ICON')"
+        icon="i-ph-article"
         slate
         faded
         sm

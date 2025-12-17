@@ -27,14 +27,12 @@ const getters = {
   },
   getSortedCannedResponses(_state) {
     return sortOrder =>
-      [..._state.records]
-        .filter(cannedMessage => cannedMessage.is_template === false)
-        .sort((a, b) => {
-          if (sortOrder === 'asc') {
-            return a.short_code.localeCompare(b.short_code);
-          }
-          return b.short_code.localeCompare(a.short_code);
-        });
+      [..._state.records].sort((a, b) => {
+        if (sortOrder === 'asc') {
+          return a.short_code.localeCompare(b.short_code);
+        }
+        return b.short_code.localeCompare(a.short_code);
+      });
   },
   getUIFlags(_state) {
     return _state.uiFlags;

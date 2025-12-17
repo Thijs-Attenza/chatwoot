@@ -10,6 +10,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    contact: {
+      type: Object,
+      default: () => ({}),
+    },
   },
   emits: ['onSend', 'cancel', 'update:show'],
   data() {
@@ -28,9 +32,21 @@ export default {
     },
   },
   methods: {
+    fixTemplateVariables(message) {
+      const replacementList = {
+        contactName: this.contact.name,
+        contactFirstName: this.contact.name.split(' ')[0],
+        contactEmail: this.contact.email,
+      };
+
+      Object.keys(replacementList).forEach(key => {
+        message = message.replace('{{' + key + '}}', replacementList[key]);
+      });
+      return message;
+    },
     pickTemplate(template) {
       this.selectedWaTemplate = template;
-      this.$emit('onSend', template.description);
+      this.$emit('onSend', this.fixTemplateVariables(template.description));
     },
     onClose() {
       this.$emit('cancel');
