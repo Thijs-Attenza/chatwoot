@@ -28,7 +28,7 @@ export default {
       default: () => 0,
     },
   },
-  emits: ['setReplyMode', 'togglePopout'],
+  emits: ['setReplyMode', 'togglePopout', 'closeReply'],
   setup(props, { emit }) {
     const setReplyMode = mode => {
       emit('setReplyMode', mode);
@@ -104,11 +104,19 @@ export default {
         </span>
       </div>
     </div>
-    <NextButton
-      ghost
-      class="ltr:rounded-bl-md rtl:rounded-br-md ltr:rounded-br-none rtl:rounded-bl-none ltr:rounded-tl-none rtl:rounded-tr-none text-n-slate-11 ltr:rounded-tr-[11px] rtl:rounded-tl-[11px]"
-      icon="i-lucide-maximize-2"
-      @click="$emit('togglePopout')"
-    />
+    <div>
+      <NextButton
+        ghost
+        class="ltr:rounded-bl-md rtl:rounded-br-md ltr:rounded-br-none rtl:rounded-bl-none ltr:rounded-tl-none rtl:rounded-tr-none text-n-slate-11 ltr:rounded-tr-[11px] rtl:rounded-tl-[11px]"
+        icon="i-lucide-maximize-2"
+        @click="$emit('togglePopout')"
+      />
+      <NextButton
+        ghost
+        class="ltr:rounded-bl-md rtl:rounded-br-md ltr:rounded-br-none rtl:rounded-bl-none ltr:rounded-tl-none rtl:rounded-tr-none text-n-slate-11 ltr:rounded-tr-[11px] rtl:rounded-tl-[11px]"
+        icon="i-lucide-square-x"
+        @click="$emit('closeReply')"
+      />
+    </div>
   </div>
 </template>

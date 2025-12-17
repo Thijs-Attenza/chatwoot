@@ -21,6 +21,7 @@ import QuotedEmailPreview from './QuotedEmailPreview.vue';
 import { REPLY_EDITOR_MODES } from 'dashboard/components/widgets/WootWriter/constants';
 import WootMessageEditor from 'dashboard/components/widgets/WootWriter/Editor.vue';
 import AudioRecorder from 'dashboard/components/widgets/WootWriter/AudioRecorder.vue';
+import NextButton from 'dashboard/components-next/button/Button.vue';
 import { AUDIO_FORMATS } from 'shared/constants/messages';
 import { BUS_EVENTS } from 'shared/constants/busEvents';
 import {
@@ -52,12 +53,14 @@ import {
 import { LOCAL_STORAGE_KEYS } from 'dashboard/constants/localStorage';
 import { LocalStorage } from 'shared/helpers/localStorage';
 import { emitter } from 'shared/helpers/mitt';
+import EmailTranscriptModal from './EmailTranscriptModal.vue';
 const EmojiInput = defineAsyncComponent(
   () => import('shared/components/emoji/EmojiInput.vue')
 );
 
 export default {
   components: {
+    EmailTranscriptModal,
     ArticleSearchPopover,
     AttachmentPreview,
     AudioRecorder,
@@ -65,6 +68,7 @@ export default {
     ReplyBoxBanner,
     EmojiInput,
     MessageSignatureMissingAlert,
+    NextButton,
     ReplyBottomPanel,
     ReplyEmailHead,
     ReplyToMessage,
@@ -109,6 +113,8 @@ export default {
     return {
       message: '',
       inReplyTo: {},
+      isSendingReply: false,
+      showEmailActionsModal: false,
       isFocused: false,
       showEmojiPicker: false,
       attachedFiles: [],
@@ -292,7 +298,8 @@ export default {
       return this.isAWebWidgetInbox || this.isAnEmailChannel;
     },
     showAudioRecorder() {
-      return !this.isOnPrivateNote && this.showFileUpload;
+      return false; // Override
+      // return !this.isOnPrivateNote && this.showFileUpload;
     },
     showAudioRecorderEditor() {
       return this.showAudioRecorder && this.isRecordingAudio;
@@ -432,6 +439,7 @@ export default {
     currentChat(conversation, oldConversation) {
       const { can_reply: canReply } = conversation;
       if (oldConversation && oldConversation.id !== conversation.id) {
+        this.isSendingReply = false;
         // Only update email fields when switching to a completely different conversation (by ID)
         // This prevents overwriting user input (e.g., CC/BCC fields) when performing actions
         // like self-assign or other updates that do not actually change the conversation context
@@ -761,6 +769,7 @@ export default {
 
         this.clearMessage();
         this.hideEmojiPicker();
+        this.isSendingReply = false;
         this.$emit('update:popOutReplyBox', false);
       }
     },
@@ -1155,13 +1164,67 @@ export default {
     togglePopout() {
       this.$emit('update:popOutReplyBox', !this.popOutReplyBox);
     },
+    startReply: function () {
+      this.isSendingReply = true;
+      if (this.showRichContentEditor === true) {
+        this.$nextTick(() =>
+          this.$refs.wootReplyEditor.focusEditorInputField('start')
+        );
+      } else {
+        this.$nextTick(() => this.$refs.messageInput.resizeTextarea());
+        this.$nextTick(() => this.$refs.messageInput.setCursor());
+      }
+    },
+    closeReply() {
+      this.isSendingReply = false;
+    },
+    toggleEmailModal() {
+      this.showEmailActionsModal = !this.showEmailActionsModal;
+    },
   },
 };
 </script>
 
 <template>
   <ReplyBoxBanner :message="message" :is-on-private-note="isOnPrivateNote" />
-  <div ref="replyEditor" class="reply-box" :class="replyBoxClass">
+  <div v-show="!isSendingReply" class="reply-box" :class="replyBoxClass">
+    <div class="flex justify-between p-3">
+      <div class="left-wrap">
+        <NextButton
+          icon="i-lucide-forward"
+          label="Doorsturen"
+          type="submit"
+          sm
+          color="slate"
+          class="flex-shrink-0"
+          @click="toggleEmailModal"
+        />
+      </div>
+      <div class="right-wrap">
+        <NextButton
+          icon="i-lucide-reply"
+          label="Beantwoorden"
+          type="submit"
+          sm
+          color="blue"
+          class="flex-shrink-0"
+          @click="startReply"
+        />
+      </div>
+    </div>
+    <EmailTranscriptModal
+      v-if="showEmailActionsModal"
+      :show="showEmailActionsModal"
+      :current-chat="currentChat"
+      @cancel="toggleEmailModal"
+    />
+  </div>
+  <div
+    v-show="isSendingReply"
+    ref="replyEditor"
+    class="reply-box"
+    :class="replyBoxClass"
+  >
     <ReplyTopPanel
       :mode="replyType"
       :is-reply-restricted="isReplyRestricted"
@@ -1170,6 +1233,7 @@ export default {
       :popout-reply-box="popOutReplyBox"
       @set-reply-mode="setReplyMode"
       @toggle-popout="togglePopout"
+      @close-reply="closeReply"
     />
     <ArticleSearchPopover
       v-if="showArticleSearchPopover && connectedPortalSlug"
@@ -1230,6 +1294,7 @@ export default {
       />
       <WootMessageEditor
         v-else
+        ref="wootReplyEditor"
         v-model="message"
         :editor-id="editorStateId"
         class="input"
@@ -1242,6 +1307,7 @@ export default {
         :signature="signatureToApply"
         allow-signature
         :channel-type="channelType"
+        :focus-on-mount="false"
         @typing-off="onTypingOff"
         @typing-on="onTypingOn"
         @focus="onFocus"
