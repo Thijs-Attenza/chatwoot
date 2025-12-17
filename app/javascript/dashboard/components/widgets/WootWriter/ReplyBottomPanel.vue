@@ -386,6 +386,7 @@ export default {
         :conversation-id="conversationId"
       />
       <AIAssistanceButton
+        v-show="false"
         v-if="!isFetchingAppIntegrations"
         :conversation-id="conversationId"
         :is-private-note="isOnPrivateNote"
