@@ -504,9 +504,9 @@
     "TOGGLE_MODAL": "Bekijk alle snelkoppelingen",
     "TITLE": {
       "OPEN_CONVERSATION": "Open conversatie",
-      "RESOLVE_AND_NEXT": "Oplossen en door naar volgende",
+      "RESOLVE_AND_NEXT": "Afhandelen en door naar volgende",
       "NAVIGATE_DROPDOWN": "Dropdown-items navigeren",
-      "RESOLVE_CONVERSATION": "Conversatie oplossen",
+      "RESOLVE_CONVERSATION": "Conversatie afhandelen",
       "GO_TO_CONVERSATION_DASHBOARD": "Ga naar conversaties",
       "ADD_ATTACHMENT": "Bijlage toevoegen",
       "GO_TO_CONTACTS_DASHBOARD": "Ga naar contactpersonen",
