@@ -1176,6 +1176,7 @@ export default {
       }
     },
     closeReply() {
+      this.$emit('update:popOutReplyBox', false);
       this.isSendingReply = false;
     },
     toggleEmailModal() {
