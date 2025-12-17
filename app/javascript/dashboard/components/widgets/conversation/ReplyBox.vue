@@ -30,6 +30,7 @@ import {
   replaceVariablesInMessage,
 } from '@chatwoot/utils';
 import WhatsappTemplates from './WhatsappTemplates/Modal.vue';
+import EmailTemplates from './EmailTemplates/Modal.vue';
 import ContentTemplates from './ContentTemplates/ContentTemplatesModal.vue';
 import { MESSAGE_MAX_LENGTH } from 'shared/helpers/MessageTypeHelper';
 import inboxMixin, { INBOX_FEATURES } from 'shared/mixins/inboxMixin';
@@ -76,6 +77,7 @@ export default {
     ResizableTextArea,
     ContentTemplates,
     WhatsappTemplates,
+    EmailTemplates,
     WootMessageEditor,
     QuotedEmailPreview,
   },
@@ -130,6 +132,7 @@ export default {
       toEmails: '',
       doAutoSaveDraft: () => {},
       showWhatsAppTemplatesModal: false,
+      showEmailTemplatesModal: false,
       showContentTemplatesModal: false,
       updateEditorSelectionWith: '',
       undefinedVariableMessage: '',
@@ -731,8 +734,14 @@ export default {
     toggleVariablesMenu(value) {
       this.showVariablesMenu = value;
     },
+    openEmailTemplateModal() {
+      this.showEmailTemplatesModal = true;
+    },
     openWhatsappTemplateModal() {
       this.showWhatsAppTemplatesModal = true;
+    },
+    hideEmailTemplatesModal() {
+      this.showEmailTemplatesModal = false;
     },
     hideWhatsappTemplatesModal() {
       this.showWhatsAppTemplatesModal = false;
@@ -835,6 +844,11 @@ export default {
         ...messagePayload,
       });
       this.hideWhatsappTemplatesModal();
+    },
+    async onSendEmailReply(messagePayload) {
+      this.message = this.toggleSignatureForDraft(messagePayload);
+
+      this.hideEmailTemplatesModal();
     },
     async onSendContentTemplateReply(messagePayload) {
       this.sendMessage({
@@ -1164,7 +1178,7 @@ export default {
     togglePopout() {
       this.$emit('update:popOutReplyBox', !this.popOutReplyBox);
     },
-    startReply: function () {
+    startReply() {
       this.isSendingReply = true;
       if (this.showRichContentEditor === true) {
         this.$nextTick(() =>
@@ -1190,21 +1204,20 @@ export default {
   <ReplyBoxBanner :message="message" :is-on-private-note="isOnPrivateNote" />
   <div v-show="!isSendingReply" class="reply-box" :class="replyBoxClass">
     <div class="flex justify-between p-3">
-      <div class="left-wrap">
+      <div class="left-wrap" />
+      <div class="right-wrap">
         <NextButton
+          v-tooltip.top-end="$t('CONVERSATION.REPLYBOX.FORWARD')"
           icon="i-lucide-forward"
-          label="Doorsturen"
           type="submit"
           sm
           color="slate"
           class="flex-shrink-0"
           @click="toggleEmailModal"
         />
-      </div>
-      <div class="right-wrap">
         <NextButton
           icon="i-lucide-reply"
-          label="Beantwoorden"
+          :label="$t('CONVERSATION.REPLYBOX.REPLY')"
           type="submit"
           sm
           color="blue"
@@ -1368,6 +1381,7 @@ export default {
       :portal-slug="connectedPortalSlug"
       :new-conversation-modal-active="newConversationModalActive"
       @select-whatsapp-template="openWhatsappTemplateModal"
+      @select-email-template="openEmailTemplateModal"
       @select-content-template="openContentTemplateModal"
       @toggle-editor="toggleRichContentEditor"
       @replace-text="replaceText"
@@ -1380,6 +1394,13 @@ export default {
       @close="hideWhatsappTemplatesModal"
       @on-send="onSendWhatsAppReply"
       @cancel="hideWhatsappTemplatesModal"
+    />
+    <EmailTemplates
+      :contact="currentContact"
+      :show="showEmailTemplatesModal"
+      @close="hideEmailTemplatesModal"
+      @on-send="onSendEmailReply"
+      @cancel="hideEmailTemplatesModal"
     />
 
     <ContentTemplates
@@ -1399,6 +1420,14 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+.left-wrap {
+  @apply items-center flex gap-2;
+}
+
+.right-wrap {
+  @apply flex gap-2;
+}
+
 .send-button {
   @apply mb-0;
 }

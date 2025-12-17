@@ -45,6 +45,7 @@ const emit = defineEmits([
   'updateTargetInbox',
   'clearSelectedContact',
   'createConversation',
+  'openEmailTemplateSelector',
 ]);
 
 const showContactsDropdown = ref(false);
@@ -239,6 +240,14 @@ const handleAttachFile = files => {
   state.attachedFiles = files;
 };
 
+const setMessage = message => {
+  state.message = message;
+
+  if (props.sendWithSignature) {
+    handleAddSignature(props.messageSignature);
+  }
+};
+
 const clearForm = () => {
   Object.assign(state, {
     message: '',
@@ -281,6 +290,10 @@ const handleSendWhatsappMessage = async ({ message, templateParams }) => {
   });
 };
 
+const handleEmailTemplateSelector = () => {
+  emit('openEmailTemplateSelector');
+};
+
 const handleSendTwilioMessage = async ({ message, templateParams }) => {
   const twilioMessagePayload = prepareWhatsAppMessagePayload({
     targetInbox: props.targetInbox,
@@ -301,6 +314,10 @@ const shouldShowMessageEditor = computed(() => {
     !showNoInboxAlert.value &&
     !inboxTypes.value.isTwilioWhatsapp
   );
+});
+
+defineExpose({
+  setMessage,
 });
 </script>
 
@@ -391,6 +408,7 @@ const shouldShowMessageEditor = computed(() => {
       @send-message="handleSendMessage"
       @send-whatsapp-message="handleSendWhatsappMessage"
       @send-twilio-message="handleSendTwilioMessage"
+      @open-email-template-selector="handleEmailTemplateSelector"
     />
   </div>
 </template>

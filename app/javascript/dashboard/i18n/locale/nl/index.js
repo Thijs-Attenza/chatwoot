@@ -35,6 +35,7 @@ import signup from './signup.json';
 import sla from './sla.json';
 import teamsSettings from './teamsSettings.json';
 import whatsappTemplates from './whatsappTemplates.json';
+import emailTemplates from './emailTemplates.json';
 import mfa from './mfa.json';
 
 export default {
@@ -75,5 +76,6 @@ export default {
   ...sla,
   ...teamsSettings,
   ...whatsappTemplates,
+  ...emailTemplates,
   ...mfa,
 };

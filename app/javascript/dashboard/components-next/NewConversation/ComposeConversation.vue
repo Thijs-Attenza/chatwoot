@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, onMounted, watch } from 'vue';
+import { ref, computed, onMounted, watch, useTemplateRef } from 'vue';
 import { useStore, useMapGetter } from 'dashboard/composables/store';
 import { useI18n } from 'vue-i18n';
 import { useWindowSize } from '@vueuse/core';
@@ -19,6 +19,7 @@ import {
 import wootConstants from 'dashboard/constants/globals';
 
 import ComposeNewConversationForm from 'dashboard/components-next/NewConversation/components/ComposeNewConversationForm.vue';
+import EmailTemplates from '../../components/widgets/conversation/EmailTemplates/Modal.vue';
 
 const props = defineProps({
   alignPosition: {
@@ -56,6 +57,9 @@ const isCreatingContact = ref(false);
 const isFetchingInboxes = ref(false);
 const isSearching = ref(false);
 const showComposeNewConversation = ref(false);
+const isTemplatePickerOpen = ref(false);
+
+const composeNewConversationForm = useTemplateRef('composeNewConversationForm');
 
 const contactById = useMapGetter('contacts/getContactById');
 const contactsUiFlags = useMapGetter('contacts/getUIFlags');
@@ -102,6 +106,19 @@ const onContactSearch = debounce(
 
 const resetContacts = () => {
   contacts.value = [];
+};
+
+const hideEmailTemplatesModal = () => {
+  isTemplatePickerOpen.value = false;
+};
+
+const setTemplateMessage = message => {
+  composeNewConversationForm.value.setMessage(message);
+  isTemplatePickerOpen.value = false;
+};
+
+const handleEmailTemplateSelector = () => {
+  isTemplatePickerOpen.value = true;
 };
 
 const handleSelectedContact = async ({ value, action, ...rest }) => {
@@ -235,54 +252,72 @@ useKeyboardEvents(keyboardEvents);
 </script>
 
 <template>
-  <div
-    v-on-click-outside="[
-      handleClickOutside,
-      // Fixed and edge case https://github.com/chatwoot/chatwoot/issues/10785
-      // This will prevent closing the compose conversation modal when the editor Create link popup is open
-      { ignore: ['div.ProseMirror-prompt'] },
-    ]"
-    class="relative"
-    :class="{
-      'z-50': showComposeNewConversation && !viewInModal,
-    }"
-  >
-    <slot
-      name="trigger"
-      :is-open="showComposeNewConversation"
-      :toggle="toggle"
+  <div>
+    <EmailTemplates
+      :contact="currentContact"
+      :show="isTemplatePickerOpen"
+      @close="hideEmailTemplatesModal"
+      @on-send="setTemplateMessage"
+      @cancel="hideEmailTemplatesModal"
     />
     <div
-      v-if="showComposeNewConversation"
+      v-on-click-outside="[
+        handleClickOutside,
+        // Fixed and edge case https://github.com/chatwoot/chatwoot/issues/10785
+        // This will prevent closing the compose conversation modal when the editor Create link popup is open
+        { ignore: ['div.ProseMirror-prompt', 'div.modal-mask'] },
+      ]"
+      class="relative"
       :class="{
-        'fixed z-50 bg-n-alpha-black1 backdrop-blur-[4px] flex items-start pt-[clamp(3rem,15vh,12rem)] justify-center inset-0':
-          viewInModal,
+        'z-50': showComposeNewConversation && !viewInModal,
       }"
-      @click.self="onModalBackdropClick"
     >
-      <ComposeNewConversationForm
-        :class="[{ 'mt-2': !viewInModal }, composePopoverClass]"
-        :contacts="contacts"
-        :contact-id="contactId"
-        :is-loading="isSearching"
-        :current-user="currentUser"
-        :selected-contact="selectedContact"
-        :target-inbox="targetInbox"
-        :is-creating-contact="isCreatingContact"
-        :is-fetching-inboxes="isFetchingInboxes"
-        :is-direct-uploads-enabled="directUploadsEnabled"
-        :contact-conversations-ui-flags="uiFlags"
-        :contacts-ui-flags="contactsUiFlags"
-        :message-signature="messageSignature"
-        :send-with-signature="sendWithSignature"
-        @search-contacts="onContactSearch"
-        @reset-contact-search="resetContacts"
-        @update-selected-contact="handleSelectedContact"
-        @update-target-inbox="handleTargetInbox"
-        @clear-selected-contact="clearSelectedContact"
-        @create-conversation="createConversation"
-        @discard="closeCompose"
+      <slot
+        name="trigger"
+        :is-open="showComposeNewConversation"
+        :toggle="toggle"
       />
+      <div
+        v-if="showComposeNewConversation"
+        :class="{
+          'fixed z-50 bg-n-alpha-black1 backdrop-blur-[4px] flex items-start pt-[clamp(3rem,15vh,12rem)] justify-center inset-0':
+            viewInModal,
+        }"
+        @click.self="onModalBackdropClick"
+      >
+        <ComposeNewConversationForm
+          ref="composeNewConversationForm"
+          :class="[{ 'mt-2': !viewInModal }, composePopoverClass]"
+          :contacts="contacts"
+          :contact-id="contactId"
+          :is-loading="isSearching"
+          :current-user="currentUser"
+          :selected-contact="selectedContact"
+          :target-inbox="targetInbox"
+          :is-creating-contact="isCreatingContact"
+          :is-fetching-inboxes="isFetchingInboxes"
+          :is-direct-uploads-enabled="directUploadsEnabled"
+          :contact-conversations-ui-flags="uiFlags"
+          :contacts-ui-flags="contactsUiFlags"
+          :message-signature="messageSignature"
+          :send-with-signature="sendWithSignature"
+          @search-contacts="onContactSearch"
+          @reset-contact-search="resetContacts"
+          @update-selected-contact="handleSelectedContact"
+          @update-target-inbox="handleTargetInbox"
+          @clear-selected-contact="clearSelectedContact"
+          @create-conversation="createConversation"
+          @discard="closeCompose"
+          @open-email-template-selector="handleEmailTemplateSelector"
+        />
+      </div>
     </div>
   </div>
 </template>
+
+<style scoped>
+.modal-mask {
+  width: 100vw;
+  height: 100vh;
+}
+</style>

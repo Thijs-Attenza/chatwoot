@@ -30,6 +30,7 @@ export default {
   data() {
     return {
       shortCode: '',
+      is_template: false,
       content: this.responseContent || '',
       addCanned: {
         showLoading: false,
@@ -51,6 +52,7 @@ export default {
     resetForm() {
       this.shortCode = '';
       this.content = '';
+      this.is_template = false;
       this.v$.shortCode.$reset();
       this.v$.content.$reset();
     },
@@ -62,6 +64,7 @@ export default {
         .dispatch('createCannedResponse', {
           short_code: this.shortCode,
           content: this.content,
+          is_template: this.is_template,
         })
         .then(() => {
           // Reset Form, Show success message
@@ -116,6 +119,19 @@ export default {
               @blur="v$.content.$touch"
             />
           </div>
+        </div>
+
+        <div class="w-full pt-2">
+          <label for="toggle-is-template">
+            {{ $t('CANNED_MGMT.ADD.FORM.IS_TEMPLATE.LABEL') }}<br />
+            <input
+              id="toggle-is-template"
+              v-model="is_template"
+              type="checkbox"
+              class="ltr:mr-2 rtl:ml-2"
+            />
+            {{ $t('CANNED_MGMT.ADD.FORM.IS_TEMPLATE.PLACEHOLDER') }}
+          </label>
         </div>
         <div class="flex flex-row justify-end w-full gap-2 px-0 py-2">
           <NextButton

@@ -15,8 +15,15 @@ const state = {
 };
 
 const getters = {
+  getCannedEmailResponses(_state) {
+    return _state.records.filter(
+      cannedMessage => cannedMessage.is_template === true
+    );
+  },
   getCannedResponses(_state) {
-    return _state.records;
+    return _state.records.filter(
+      cannedMessage => cannedMessage.is_template === false
+    );
   },
   getSortedCannedResponses(_state) {
     return sortOrder =>
