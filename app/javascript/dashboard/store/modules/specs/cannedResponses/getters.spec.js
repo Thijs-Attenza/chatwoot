@@ -1,9 +1,9 @@
 import CannedResponses from '../../cannedResponse';
 
 const CANNED_RESPONSES = [
-  { short_code: 'hello', content: 'Hi ' },
-  { short_code: 'ask', content: 'Ask questions' },
-  { short_code: 'greet', content: 'Good morning' },
+  { short_code: 'hello', content: 'Hi ', is_template: true },
+  { short_code: 'ask', content: 'Ask questions', is_template: false },
+  { short_code: 'greet', content: 'Good morning', is_template: false },
 ];
 
 const getters = CannedResponses.getters;

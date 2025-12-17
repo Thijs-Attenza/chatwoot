@@ -17,6 +17,7 @@ export default {
     id: { type: Number, default: null },
     edcontent: { type: String, default: '' },
     edshortCode: { type: String, default: '' },
+    edtemplate: { type: Boolean, default: false },
     onClose: { type: Function, default: () => {} },
   },
   setup() {
@@ -29,6 +30,7 @@ export default {
         showLoading: false,
       },
       shortCode: this.edshortCode,
+      is_template: this.edtemplate,
       content: this.edcontent,
       show: true,
     };
@@ -54,6 +56,7 @@ export default {
     },
     resetForm() {
       this.shortCode = '';
+      this.is_template = false;
       this.content = '';
       this.v$.shortCode.$reset();
       this.v$.content.$reset();
@@ -67,6 +70,7 @@ export default {
           id: this.id,
           short_code: this.shortCode,
           content: this.content,
+          is_template: this.is_template,
         })
         .then(() => {
           // Reset Form, Show success message
@@ -121,6 +125,20 @@ export default {
             />
           </div>
         </div>
+
+        <div class="w-full pt-2">
+          <label for="toggle-is-template">
+            {{ $t('CANNED_MGMT.EDIT.FORM.IS_TEMPLATE.LABEL') }}<br />
+            <input
+              id="toggle-is-template"
+              v-model="is_template"
+              type="checkbox"
+              class="ltr:mr-2 rtl:ml-2"
+            />
+            {{ $t('CANNED_MGMT.EDIT.FORM.IS_TEMPLATE.PLACEHOLDER') }}
+          </label>
+        </div>
+
         <div class="flex flex-row justify-end w-full gap-2 px-0 py-2">
           <NextButton
             faded

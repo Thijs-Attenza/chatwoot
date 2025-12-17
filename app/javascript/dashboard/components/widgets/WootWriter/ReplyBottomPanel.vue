@@ -131,6 +131,7 @@ export default {
     'replaceText',
     'toggleInsertArticle',
     'toggleEditor',
+    'selectEmailTemplate',
     'selectWhatsappTemplate',
     'selectContentTemplate',
     'toggleQuotedReply',
@@ -284,6 +285,14 @@ export default {
 <template>
   <div class="flex justify-between p-3" :class="wrapClass">
     <div class="left-wrap">
+      <NextButton
+        v-tooltip.top-end="$t('CONVERSATION.REPLYBOX.TIP_EMOJI_ICON')"
+        icon="i-ph-keyboard"
+        slate
+        faded
+        sm
+        @click="$emit('selectEmailTemplate')"
+      />
       <NextButton
         v-tooltip.top-end="$t('CONVERSATION.REPLYBOX.TIP_EMOJI_ICON')"
         icon="i-ph-smiley-sticker"

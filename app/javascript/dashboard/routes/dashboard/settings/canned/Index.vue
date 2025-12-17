@@ -111,6 +111,7 @@ const confirmDeletion = () => {
 const tableHeaders = computed(() => {
   return [
     t('CANNED_MGMT.LIST.TABLE_HEADER.SHORT_CODE'),
+    t('CANNED_MGMT.LIST.TABLE_HEADER.TEMPLATE'),
     t('CANNED_MGMT.LIST.TABLE_HEADER.CONTENT'),
     t('CANNED_MGMT.LIST.TABLE_HEADER.ACTIONS'),
   ];
@@ -180,6 +181,14 @@ const tableHeaders = computed(() => {
               :title="cannedItem.short_code"
             >
               {{ cannedItem.short_code }}
+            </td>
+            <td class="py-4 ltr:pr-4 rtl:pl-4 truncate max-w-xs font-medium">
+              <span v-if="cannedItem.is_template">{{
+                $t('CANNED_MGMT.LIST.TEMPLATE_VALUES.YES')
+              }}</span>
+              <span v-else>
+                {{ $t('CANNED_MGMT.LIST.TEMPLATE_VALUES.NO') }}
+              </span>
             </td>
             <td class="py-4 ltr:pr-4 rtl:pl-4 md:break-all whitespace-normal">
               {{ cannedItem.content }}

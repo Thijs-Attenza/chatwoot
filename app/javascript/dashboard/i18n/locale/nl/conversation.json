@@ -190,6 +190,7 @@
     },
     "REPLYBOX": {
       "REPLY": "Beantwoorden",
+      "FORWARD": "Doorsturen",
       "PRIVATE_NOTE": "Privénotitie",
       "SEND": "Verzenden",
       "CREATE": "Notitie toevoegen",
@@ -211,12 +212,12 @@
         "ADD_BCC": "Voeg bcc toe",
         "CC": {
           "LABEL": "CC",
-          "PLACEHOLDER": "Emails separated by commas",
+          "PLACEHOLDER": "E-mailadressen gescheiden door komma's",
           "ERROR": "Please enter valid email addresses"
         },
         "BCC": {
           "LABEL": "BCC",
-          "PLACEHOLDER": "Emails separated by commas",
+          "PLACEHOLDER": "E-mailadressen gescheiden door komma's",
           "ERROR": "Please enter valid email addresses"
         }
       },
