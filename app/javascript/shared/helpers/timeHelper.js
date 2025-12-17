@@ -73,7 +73,7 @@ export const shortTimestamp = (time, withAgo = false) => {
     'een minuut geleden': `1 min.${suffix}`,
     'een uur geleden': `1h${suffix}`,
     'een dag geleden': `1d${suffix}`,
-    'een maand geleden': `1m${suffix}`,
+    'een maand geleden': `1mnd.${suffix}`,
     'een jaar geleden': `1y${suffix}`,
   };
   // Check if the time string is one of the specific cases
@@ -87,8 +87,8 @@ export const shortTimestamp = (time, withAgo = false) => {
     .replace(' uur geleden', `h${suffix}`)
     .replace(' dag geleden', `d${suffix}`)
     .replace(' dagen geleden', `d${suffix}`)
-    .replace(' maand geleden', `m${suffix}`)
-    .replace(' maanden geleden', `m${suffix}`)
+    .replace(' maand geleden', `mnd.${suffix}`)
+    .replace(' maanden geleden', `mnd.${suffix}`)
     .replace(' jaar geleden', `y${suffix}`);
   return convertToShortTime;
 };

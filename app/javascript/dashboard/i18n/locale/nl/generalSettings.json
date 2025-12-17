@@ -174,11 +174,11 @@
   "NETWORK": {
     "NOTIFICATION": {
       "OFFLINE": "Offline",
-      "RECONNECTING": "Reconnecting...",
-      "RECONNECT_SUCCESS": "Reconnected"
+      "RECONNECTING": "Verbinding maken...",
+      "RECONNECT_SUCCESS": "Verbonden"
     },
     "BUTTON": {
-      "REFRESH": "Refresh"
+      "REFRESH": "Vernieuwen"
     }
   },
   "COMMAND_BAR": {
