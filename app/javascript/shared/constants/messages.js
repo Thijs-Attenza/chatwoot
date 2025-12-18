@@ -98,6 +98,25 @@ export const AUDIO_FORMATS = {
 
 export const MESSAGE_VARIABLES = [
   {
+    label: 'Volledige naam contactpersoon',
+    key: 'contact.name',
+  },
+  {
+    label: 'Voornaam contactpersoon',
+    key: 'contact.first_name',
+  },
+  {
+    label: 'Achternaam contactpersoon',
+    key: 'contact.last_name',
+  },
+  {
+    label: 'E-mailadres contactpersoon',
+    key: 'contact.email',
+  },
+];
+/*
+export const MESSAGE_VARIABLES = [
+  {
     label: 'Conversation Id',
     key: 'conversation.id',
   },
@@ -150,6 +169,7 @@ export const MESSAGE_VARIABLES = [
     key: 'inbox.id',
   },
 ];
+*/
 
 export const ATTACHMENT_ICONS = {
   image: 'image',

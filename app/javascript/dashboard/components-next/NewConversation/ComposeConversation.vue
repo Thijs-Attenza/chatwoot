@@ -254,7 +254,7 @@ useKeyboardEvents(keyboardEvents);
 <template>
   <div>
     <EmailTemplates
-      :contact="currentContact"
+      :contact="selectedContact"
       :show="isTemplatePickerOpen"
       @close="hideEmailTemplatesModal"
       @on-send="setTemplateMessage"

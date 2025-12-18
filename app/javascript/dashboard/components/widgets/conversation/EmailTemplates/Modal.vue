@@ -1,5 +1,6 @@
 <script>
 import TemplatesPicker from './TemplatesPicker.vue';
+import { splitName } from '@chatwoot/utils';
 
 export default {
   components: {
@@ -33,10 +34,12 @@ export default {
   },
   methods: {
     fixTemplateVariables(message) {
+      const { firstName, lastName } = splitName(this.contact.name || '');
       const replacementList = {
-        contactName: this.contact.name,
-        contactFirstName: this.contact.name.split(' ')[0],
-        contactEmail: this.contact.email,
+        'contact.name': this.contact.name,
+        'contact.first_name': firstName,
+        'contact.last_name': lastName,
+        'contact.email': this.contact.email,
       };
 
       Object.keys(replacementList).forEach(key => {
